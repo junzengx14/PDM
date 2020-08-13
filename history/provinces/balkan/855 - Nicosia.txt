@@ -1,0 +1,9 @@
+owner = TUR
+controller = TUR
+add_core = TUR
+add_core = CYP
+add_core = GRE
+add_core = RME
+trade_goods = copper
+life_rating = 35
+terrain = good_farmland

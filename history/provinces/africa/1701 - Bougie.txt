@@ -1,0 +1,13 @@
+owner = ALD
+controller = ALD
+add_core = ALD
+add_core = RME
+trade_goods = lead
+life_rating = 35
+terrain = dry_forest_mountains
+colonial = 1
+1836.1.1 = {
+	controller = FRA 
+	owner = FRA
+}
+1861.1.1 = { colonial = 0 }

@@ -1,0 +1,12 @@
+owner = MOR
+controller = MOR
+add_core = MOR
+add_core = RME
+trade_goods = fish
+life_rating = 30
+terrain = semi_desert_hills
+1861.1.1 = {
+	owner = SPA
+	controller = SPA
+	colonial = 1
+}

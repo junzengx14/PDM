@@ -1,0 +1,14 @@
+owner = PBR
+controller = PBR
+add_core = BRZ
+add_core = MAR
+add_core = PIA
+add_core = PBR
+trade_goods = sugar
+life_rating = 35
+terrain = dry_forest_hills
+1825.1.1 = {
+	controller = BRZ
+	owner = BRZ
+	add_core = BRZ
+}

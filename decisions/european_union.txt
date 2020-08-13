@@ -1,0 +1,185 @@
+political_decisions = {
+	EUR_embrace_german_minorities = {
+#		picture = sikh_empire
+		potential = {
+			tag = EUR
+			NOT = { has_country_flag = embraced_german }
+
+		}
+		
+		allow = {
+			any_owned_province = { 
+				OR = { 
+					culture = north_german 
+					culture = south_german
+					culture = swiss
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			add_accepted_culture = north_german
+			add_accepted_culture = south_german
+			add_accepted_culture = swiss
+			set_country_flag = embraced_german
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	EUR_embrace_italian_minorities = {
+#		picture = sikh_empire
+		potential = {
+			tag = EUR
+			NOT = { has_country_flag = embraced_italian }
+
+		}
+		
+		allow = {
+			any_owned_province = {
+				OR = { 
+					culture = north_italian 
+					culture = south_italian
+					culture = maltese
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			add_accepted_culture = north_italian
+			add_accepted_culture = south_italian
+			add_accepted_culture = maltese
+			set_country_flag = embraced_italian
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	EUR_embrace_iberian_minorities = {
+#		picture = sikh_empire
+		potential = {
+			tag = EUR
+			NOT = { has_country_flag = embraced_iberian }
+
+		}
+		
+		allow = {
+			any_owned_province = {
+				OR = { 
+					culture = spanish 
+					culture = portuguese
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			add_accepted_culture = spanish
+			add_accepted_culture = portuguese
+			set_country_flag = embraced_iberian
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	EUR_embrace_scandinavian_minorities = {
+#		picture = sikh_empire
+		potential = {
+			tag = EUR
+			NOT = { has_country_flag = embraced_scandinavian }
+
+		}
+		
+		allow = {
+			any_owned_province = {
+				OR = { 
+					culture = danish 
+					culture = swedish
+					culture = icelandic
+					culture = norwegian
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			add_accepted_culture = danish
+			add_accepted_culture = swedish
+			add_accepted_culture = norwegian
+			add_accepted_culture = icelandic
+			set_country_flag = embraced_scandinavian
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	EUR_embrace_british_minorities = {
+#		picture = sikh_empire
+		potential = {
+			tag = EUR
+			NOT = { has_country_flag = embraced_british }
+
+		}
+		
+		allow = {
+			any_owned_province = {
+				OR = { 
+					culture = british 
+					culture = irish
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			add_accepted_culture = british
+			add_accepted_culture = irish
+			set_country_flag = embraced_british
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	EUR_embrace_russian_minorities = {
+#		picture = sikh_empire
+		potential = {
+			tag = EUR
+			NOT = { has_country_flag = embraced_russian }
+
+		}
+		
+		allow = {
+			any_owned_province = { 
+				OR = { 
+					culture = russian 
+					culture = ukrainian
+					culture = byelorussian
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			add_accepted_culture = russian
+			add_accepted_culture = ukrainian
+			add_accepted_culture = byelorussian
+			set_country_flag = embraced_russian
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

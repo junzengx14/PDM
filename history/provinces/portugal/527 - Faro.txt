@@ -1,0 +1,7 @@
+owner = POR
+controller = POR
+add_core = POR
+add_core = RME
+trade_goods = fish
+life_rating = 35
+terrain = hilly_farmland

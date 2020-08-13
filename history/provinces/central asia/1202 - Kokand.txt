@@ -1,0 +1,7 @@
+owner = KOK
+controller = KOK
+add_core = KOK
+add_core = RUS
+trade_goods = horses
+life_rating = 35
+terrain = marginal_farmland

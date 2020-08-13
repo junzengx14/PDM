@@ -1,0 +1,27 @@
+name = "War of Brazilian Independence"
+
+1822.9.7 = {
+	add_attacker = POR
+	add_defender = PBR
+	
+	# actor
+	# receiver
+	# casus_belli - cb type
+	# country - 3rd party
+	# state_province_id - target state capital
+	war_goal = {
+		casus_belli = conquest
+		actor = POR
+		receiver = PBR
+	}
+	war_goal = {
+		casus_belli = status_quo
+		actor = PBR
+		receiver = POR
+	}
+}
+
+1825.4.21 = {
+	rem_attacker = POR
+	rem_defender = PBR
+}

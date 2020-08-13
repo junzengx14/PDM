@@ -1,0 +1,8 @@
+owner = FRA
+controller = FRA
+add_core = FRA
+add_core = BRT
+add_core = RME
+trade_goods = fish
+life_rating = 32
+terrain = marginal_farmland

@@ -1,0 +1,2161 @@
+#Belgian Revolution
+country_event = {
+	id = 7000
+	title = "Belgian Revolution"
+	desc = "EVTDESC7000"
+	
+	trigger = {
+		tag = NET
+		year = 1830
+		NOT = { exists = BEL }
+		any_owned_province = {
+			OR = {
+				is_core = WAL
+				is_core = FLA
+			}
+		}
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+	
+	option = {
+		name = "Damn them!"
+		any_owned = {
+			limit = {
+				OR = {
+					is_core = FLA
+					is_core = WLL
+					province_id = 381
+				}
+			}
+			add_core = BEL
+		}
+		release = BEL
+		LUX = { 
+			all_core = { 
+				add_core = NET
+				add_core = BEL
+			}
+			release = BEL
+		}
+		war = {
+			target = BEL
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		BEL = {
+			small_arms = 100
+			canned_food = 200
+			artillery = 50
+			luxury_clothes = 50
+			wine = 50
+			liquor = 50
+			ammunition = 100
+			money = 1000
+		}
+		ENG = {
+			diplomatic_influence = {
+				who = BEL
+				value = 100
+			}
+		}
+		set_country_flag = belgian_independence
+		
+		ai_chance = {
+			factor = 90
+		}
+	}
+	option = {
+		name = "Let them go."
+		any_owned = {
+			limit = {
+				OR = {
+					is_core = FLA
+					is_core = WLL
+					province_id = 381
+				}
+			}
+			add_core = BEL
+			remove_core = THIS
+		}
+		release = BEL
+		LUX = { 
+			all_core = { 
+				add_core = BEL
+			}
+			release = BEL
+		}
+		
+		set_country_flag = belgian_independence
+		
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+#Texas Revolution
+country_event = {
+	id = 7001
+	title = "Texas Revolution"
+	desc = "EVTDESC7001"
+	
+	trigger = {
+		year = 1835
+		NOT = { 
+			exists = TEX
+			tag = USA
+                        year = 1840
+		}
+		any_owned_province = {
+			is_core = TEX
+		}
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+	
+	option = {
+		name = "Damn them!"
+		TEX_132 = {
+			add_core = TEX
+		}
+		103 = {
+			add_core = TEX
+		}
+		105 = {
+			add_core = TEX
+		}
+		release = TEX
+		USA = {
+			diplomatic_influence = {
+				who = TEX
+				value = 50
+			}
+		}
+		war = {
+			target = TEX
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		
+		ai_chance = {
+			factor = 90
+		}
+	}
+	option = {
+		name = "Let them go."
+		TEX_132 = {
+			add_core = TEX
+			remove_core = THIS
+		}
+		103 = {
+			add_core = TEX
+			remove_core = THIS
+		}
+		105 = {
+			add_core = TEX
+			remove_core = THIS
+		}
+		release = TEX
+		
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+#Greek Independence
+country_event = {
+	id = 7002
+	title = "Greek Independence"
+	desc = "EVTDESC7002"
+	
+	trigger = {
+		tag = TUR
+		year = 1822
+		NOT = { exists = GRE }
+		any_owned_province = {
+			is_core = GRE
+		}
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+	
+	option = {
+		name = "Damn them!"
+		release = GRE
+		war = {
+			target = GRE
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		GRE = {
+			small_arms = 100
+			canned_food = 200
+			artillery = 50
+			luxury_clothes = 50
+			wine = 50
+			liquor = 50
+			ammunition = 100
+			money = 1000
+		}
+		set_country_flag = greek_war_of_independece
+		
+		ai_chance = {
+			factor = 90
+		}
+	}
+	option = {
+		name = "Let them go."
+		all_core = {
+			limit = {
+				is_core = GRE
+			}
+			remove_core = THIS
+		}
+		release = GRE
+		
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+#African Independence
+country_event = {
+	id = 183111
+	title = "The Ottoman Empire lost controll!"
+	desc = "EVTDESC183111"
+	
+	trigger = {
+		tag = TUR
+		year = 1830
+		exists = GRE 
+                exists = EGY
+                NOT = { has_country_flag = african_independence }
+		any_owned_province = {
+			is_core = TRI
+		}
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+	
+	option = {
+		name = "Restore Order!"
+                inherit = TRI
+                release_vassal = EGY
+                inherit = CYR
+                release_vassal = TUN
+                release_vassal = HDJ
+                release_vassal = ALD
+		war = {
+			target = EGY
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		EGY = {
+			small_arms = 100
+			canned_food = 200
+			artillery = 50
+			luxury_clothes = 50
+			wine = 50
+			liquor = 50
+			ammunition = 100
+			money = 1000
+		}
+		war = {
+			target = TUN
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		TUN = {
+			small_arms = 100
+			canned_food = 200
+			artillery = 50
+			luxury_clothes = 50
+			wine = 50
+			liquor = 50
+			ammunition = 100
+			money = 1000
+		}
+		war = {
+			target = TRI
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		TRI = {
+			small_arms = 100
+			canned_food = 200
+			artillery = 50
+			luxury_clothes = 50
+			wine = 50
+			liquor = 50
+			ammunition = 100
+			money = 1000
+		}
+		war = {
+			target = CYR
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		CYR = {
+			small_arms = 100
+			canned_food = 200
+			artillery = 50
+			luxury_clothes = 50
+			wine = 50
+			liquor = 50
+			ammunition = 100
+			money = 1000
+		}
+		war = {
+			target = ALD
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		ALD = {
+			small_arms = 100
+			canned_food = 200
+			artillery = 50
+			luxury_clothes = 50
+			wine = 50
+			liquor = 50
+			ammunition = 100
+			money = 1000
+		}
+		war = {
+			target = HDJ
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		HDJ = {
+			small_arms = 100
+			canned_food = 200
+			artillery = 50
+			luxury_clothes = 50
+			wine = 50
+			liquor = 50
+			ammunition = 100
+			money = 1000
+		}
+		set_country_flag = african_independece
+		
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "Let them go."
+		all_core = {
+			limit = {
+				is_core = TRI
+			}
+			remove_core = THIS
+		}
+                inherit = TRI
+                release_vassal = EGY
+                inherit = CYR
+                release_vassal = TUN
+                release_vassal = HDJ
+                release_vassal = ALD
+		set_country_flag = african_independece
+		
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Central American War of Independence
+country_event = {
+	id = 7004
+	title = "Central American War of Independence"
+	desc = "EVTDESC7004"
+	
+	trigger = {
+		tag = MEX
+                year = 1830
+		NOT = { year = 1840 }
+		NOT = { 
+                      exists = UCA
+                      exists = GUA
+                      exists = HON
+                      exists = COS
+                      exists = ELS
+                      exists = NIC
+                }
+	}
+
+	mean_time_to_happen =  {
+		months = 36
+	}
+	
+	option = {
+		name = "Damn them!"
+                HON = {
+                   all_core = { add_core = UCA }
+                }
+                ELS = {
+                   all_core = { add_core = UCA }
+                }
+                NIC = {
+                   all_core = { add_core = UCA }
+                }
+                COS = {
+                   all_core = { add_core = UCA }
+                }
+                CHP = {
+                   all_core = { add_core = UCA }
+                }
+		release = UCA
+		war = {
+			target = UCA
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		UCA = {
+			small_arms = 100
+			canned_food = 200
+			artillery = 50
+			luxury_clothes = 50
+			wine = 50
+			liquor = 50
+			ammunition = 100
+			money = 1000
+		}
+
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = "Let them go."
+                HON = {
+                   all_core = { add_core = UCA }
+                }
+                ELS = {
+                   all_core = { add_core = UCA }
+                }
+                NIC = {
+                   all_core = { add_core = UCA }
+                }
+                COS = {
+                   all_core = { add_core = UCA }
+                }
+                CHP = {
+                   all_core = { add_core = UCA }
+                }
+		release = UCA
+		
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 2
+				war_exhaustion = 10
+			}
+			modifier = {
+				factor = 2
+				year = 1825
+			}
+			modifier = {
+				factor = 2
+				average_militancy = 5
+			}
+		}
+	}
+}
+
+#Gallic War of Independence
+country_event = {
+	id = 18744
+	title = "The 2nd Gallic uprising?"
+	desc = "EVTDESC18744"
+	picture = "caesars"
+	
+	trigger = {
+		tag = RME
+                year = 1874
+                owns = 572
+                owns = 571
+                owns = 521
+                owns = 487
+                owns = 425
+                owns = 387
+                owns = 378
+		NOT = { 
+                        exists = GAL
+                        has_country_flag = gallia
+                }
+	}
+
+	mean_time_to_happen =  {
+		months = 36
+		modifier = {
+			factor = 0.5
+			average_militancy = 5
+		}
+		modifier = {
+			factor = 0.75
+			year = 1820
+		}
+		modifier = {
+			factor = 0.5
+			year = 1874
+		}
+	}
+	
+	option = {
+		name = "Destroy the rebels"
+                set_country_flag = gallia
+                FRA = {
+                   all_core = { add_core = GAL }
+                }
+                SPA = {
+                   all_core = { add_core = GAL }
+                }
+                SPC = {
+                   all_core = { add_core = GAL }
+                }
+                POR = {
+                   all_core = { add_core = GAL }
+                }
+                BEL = {
+                   all_core = { add_core = GAL }
+                }
+                RHI = {
+                   all_core = { add_core = GAL }
+                }
+		GAL = { 
+                        civilized = yes
+			government = absolute_monarchy
+                }
+                release = GAL
+		war = {
+			target = GAL
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		GAL = {
+			small_arms = 100
+			canned_food = 200
+			artillery = 50
+			luxury_clothes = 50
+			wine = 50
+			liquor = 50
+			ammunition = 100
+			money = 1000
+		}
+
+		ai_chance = {
+			factor = 70
+		}
+	}
+}
+
+#Bolivian War of Independence
+country_event = {
+	id = 7009
+	title = "Bolivian War of Independence"
+	desc = "EVTDESC7009"
+	
+	trigger = {
+		tag = SPA
+                year = 1828
+		NOT = { year = 1847 }
+		NOT = { exists = BOL }
+		any_owned_province = {
+			is_core = BOL
+		}
+	}
+
+	mean_time_to_happen =  {
+		months = 36
+		modifier = {
+			factor = 0.5
+			average_militancy = 5
+		}
+		modifier = {
+			factor = 0.75
+			year = 1820
+		}
+		modifier = {
+			factor = 0.5
+			year = 1825
+		}
+	}
+	
+	option = {
+		name = "Damn them!"
+		release = BOL
+		war = {
+			target = BOL
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		BOL = {
+			small_arms = 100
+			canned_food = 200
+			artillery = 50
+			luxury_clothes = 50
+			wine = 50
+			liquor = 50
+			ammunition = 100
+			money = 1000
+		}
+
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = "Let them go."
+		release = BOL
+		
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 2
+				war_exhaustion = 10
+			}
+			modifier = {
+				factor = 2
+				year = 1825
+			}
+			modifier = {
+				factor = 2
+				average_militancy = 5
+			}
+		}
+	}
+}
+
+#Dissolution of Gran Colombia
+country_event = {
+	id = 7015
+	title = "Dissolution of Gran Colombia"
+	desc = "EVTDESC7015"
+
+	trigger = {
+		tag = GCO
+		year = 1831
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+	option = {
+		name = "Divide the Country."
+		ECU_2279 = {
+			add_core = ECU
+		}
+		2287 = {
+			add_core = ECU
+		}
+		2288 = {
+			add_core = ECU
+		}
+		2289 = {
+			add_core = ECU
+		}
+		VNZ_2234 = {
+			add_core = VNZ
+		}
+		VNZ_2265 = {
+			add_core = VNZ
+		}
+		VNZ_2278 = {
+			add_core = VNZ
+		}
+		2243 = {
+			add_core = VNZ
+		}
+		2242 = {
+			add_core = VNZ
+		}
+		all_core = {
+			limit = {
+				OR = {
+					is_core = VNZ
+					is_core = ECU
+				}
+			}
+			remove_core = GCO
+		}
+		release = ECU
+		release = VNZ
+		release = AMA
+		all_core = {
+			add_core = CLM
+			remove_core = GCO
+		}
+		change_tag = CLM
+		
+		ai_chance = {
+			factor = 90
+		}
+	}
+	option = {
+		name = "We shall stay united!"
+		ECU_2279 = {
+			add_core = ECU
+		}
+		2287 = {
+			add_core = ECU
+		}
+		2288 = {
+			add_core = ECU
+		}
+		2289 = {
+			add_core = ECU
+		}
+		VNZ_2234 = {
+			add_core = VNZ
+		}
+		VNZ_2265 = {
+			add_core = VNZ
+		}
+		VNZ_2278 = {
+			add_core = VNZ
+		}
+		2243 = {
+			add_core = VNZ
+		}
+		2242 = {
+			add_core = VNZ
+		}
+                CLM = {
+                   all_core = { add_core = GCO }
+                }
+                VNZ = {
+                   all_core = { add_core = GCO }
+                }
+                ECU = {
+                   all_core = { add_core = GCO }
+                }
+		release = ECU
+		release = VNZ
+		war = {
+			target = VNZ
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		war = {
+			target = ECU
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+#Dissolution of The Empire
+country_event = {
+	id = 182222
+	title = "The Constitutional Convention"
+	desc = "EVTDESC182222"
+        major = yes
+
+	trigger = {
+		tag = BRZ
+		year = 1825
+                war = no
+                has_global_flag = early_brasilia
+                NOT = { has_global_flag = the_empire_has_king }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+	option = {
+		name = "We shall stay united!"
+		release = CEQ
+		war = {
+			target = CEQ
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		PBR = {
+			all_core = { remove_core = PBR }
+		}
+                set_global_flag = the_empire_has_king
+		ai_chance = {
+			factor = 85
+		}
+	}
+	option = {
+		name = "Proclaim the Republic."
+		2461 = { change_province_name = "Florianópolis" }
+		government = democracy
+		PBR = {
+			all_core = { remove_core = PBR }
+		}
+		political_reform = population_equal_weight
+		political_reform = wealth_weighted_voting
+		political_reform = yes_meeting
+		political_reform = free_press
+		political_reform = no_trade_unions
+		political_reform = gerrymandering
+		political_reform = first_past_the_post
+		ruling_party_ideology = liberal
+                set_global_flag = the_empire_has_fallen	
+      		ai_chance = {
+			factor = 5
+		}	
+
+	}
+	option = {
+		name = "Reform the Kingdom."
+		release = CEQ
+		war = {
+			target = CEQ
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		all_core = {
+			add_core = KBR
+		}
+		all_core = {
+			remove_core = BRZ
+		}
+		PBR = {
+			all_core = { remove_core = PBR }
+		}
+		change_tag = KBR
+                set_global_flag = the_empire_has_king	
+		ai_chance = {
+			factor = 5
+		}
+	}
+	option = {
+		name = "Make a Revolution"
+                change_tag = RBR
+		2461 = { change_province_name = "Florianópolis" }
+		government = democracy
+		BRZ = {
+			all_core = { add_core = RBR }
+		}
+		BRZ = {
+			all_core = { remove_core = BRZ }
+		}
+		political_reform = population_equal_weight
+		political_reform = universal_voting
+		political_reform = yes_meeting
+		political_reform = free_press
+		political_reform = all_trade_unions
+		political_reform = secret_ballots
+		political_reform = proportional_representation
+		political_reform = protected
+		political_reform = no_draft
+		political_reform = naturalization
+		political_reform = no_slavery
+		ruling_party_ideology = liberal
+                set_global_flag = the_empire_has_fallen	
+      		ai_chance = {
+			factor = 0
+		}	
+
+	}
+	option = {
+		name = "The New Monarchical Experiment"
+                change_tag = RBR
+		government = hms_government
+		BRZ = {
+			all_core = { add_core = RBR }
+		}
+		BRZ = {
+			all_core = { remove_core = BRZ }
+		}
+		PBR = {
+			all_core = { remove_core = PBR }
+		}
+		political_reform = population_equal_weight
+		political_reform = universal_voting
+		political_reform = yes_meeting
+		political_reform = free_press
+		political_reform = all_trade_unions
+		political_reform = secret_ballots
+		political_reform = proportional_representation
+		political_reform = protected
+		political_reform = no_draft
+		political_reform = naturalization
+		political_reform = no_slavery
+		ruling_party_ideology = liberal
+                set_global_flag = the_empire_has_fallen	
+      		ai_chance = {
+			factor = 0
+		}	
+
+	}
+	option = {
+		name = "Break the Empire."
+		release = SAO
+		release = SCT
+		release = MAR
+                release = PNA
+		release = MGS
+		release = GRP
+		release = MTG
+		release = CEQ
+		release = BAH
+		release = RGS
+		release = GOY
+		release = URU
+		all_core = {
+			remove_core = BRZ
+		}
+		PBR = {
+			all_core = { remove_core = PBR }
+		}
+		change_tag = RIO
+                set_global_flag = the_empire_has_fallen	
+		ai_chance = {
+			factor = 5
+		}	
+                
+	}
+	option = {
+		name = "Remember the King of São Paulo!"
+		change_tag = SAO
+		government = hms_goverment
+		BRZ = {
+			all_core = { add_core = SAO }
+		}
+		BRZ = {
+			all_core = { remove_core = BRZ }
+		}
+		PBR = {
+			all_core = { remove_core = PBR }
+		}
+		political_reform = population_equal_weight
+		political_reform = wealth_weighted_voting
+		political_reform = yes_meeting
+		political_reform = free_press
+		political_reform = no_trade_unions
+		political_reform = gerrymandering
+		political_reform = first_past_the_post
+		ruling_party_ideology = liberal
+                set_global_flag = the_empire_has_fallen	
+      		ai_chance = {
+			factor = 0
+		}	
+
+	}
+	option = {
+		name = "Restore the State of Brazil!"
+		BRZ = {
+			all_core = { add_core = PBR }
+		}
+		BRZ = {
+			all_core = { remove_core = BRZ }
+		}
+		change_tag = PBR
+		government = hms_goverment
+		political_reform = population_equal_weight
+		political_reform = wealth_weighted_voting
+		political_reform = yes_meeting
+		political_reform = free_press
+		political_reform = no_trade_unions
+		political_reform = gerrymandering
+		political_reform = first_past_the_post
+		ruling_party_ideology = liberal
+                set_global_flag = the_empire_has_king	
+      		ai_chance = {
+			factor = 0
+		}	
+
+	}
+}
+
+#The Farroupilha
+country_event = {
+	id = 183545
+	title = "The Riograndense Republic"
+	desc = "EVTDESC183545"
+        picture = "farroupilha"
+
+	trigger = {
+		tag = BRZ
+		year = 1835
+                NOT = { 
+                    has_global_flag = farroupilha
+                    owns = 2344
+                }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+	option = {
+		name = "Let they leave the Empire."
+		release = RGS
+		release = SCT
+		release = URU
+		BRS = {
+			all_core = { remove_core = BRZ }
+		}
+		URU = {
+			all_core = { remove_core = BRZ }
+		}
+		URU = {
+			all_core = { remove_core = ARG }
+		}
+                set_global_flag = farroupilha
+
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = "We shall stay united!"
+		release = RGS
+		release = SCT
+		release = URU
+		war = {
+			target = RGS
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		war = {
+			target = SCT
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		URU = {
+			all_core = { remove_core = BRZ }
+		}
+		URU = {
+			all_core = { remove_core = ARG }
+		}
+                set_global_flag = farroupilha
+      		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+#Brazilian Independence
+country_event = {
+	id = 7012
+	title = "Independência ou Morte!"
+	desc = "EVTDESC7012"
+        picture = "ipiranga"
+
+	trigger = {
+		tag = PBA
+		year = 1822
+                has_country_flag = recolonization
+                has_global_flag = dia_do_fico
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+	option = {
+		name = "Let them go."
+		release = BRZ
+                change_tag = POR
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = "Never!"
+		remove_accepted_culture = brazilian
+                change_tag = POR
+                release = BRZ
+                release = URU
+		war = {
+			target = BRZ
+			attacker_goal = {
+				casus_belli = conquest
+			}
+			call_ally = no
+		}
+		BRZ = {
+			small_arms = 100
+			canned_food = 200
+			artillery = 50
+			luxury_clothes = 50
+			wine = 50
+			liquor = 50
+			ammunition = 100
+			money = 100000
+                        inherit = URU
+		}
+		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+#Angolan Independence
+country_event = {
+	id = 1822222
+	title = "The Angolans want to join Brazil"
+	desc = "EVTDESC1822222"
+        picture = "ipiranga"
+
+	trigger = {
+		tag = POR
+		year = 1822
+                has_global_flag = independence
+                has_global_flag = dia_do_fico
+                NOT = { year = 1825 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+	option = {
+		name = "Let them go."
+                BRZ = { country_event = 1822333 }
+                any_owned = {
+				limit = {
+					OR = {
+						province_id = 2000
+						region = POR_2003
+						region = POR_2006
+						region = POR_1999
+					}
+				}
+				add_core = ANG
+				add_province_modifier = {
+					name = colonial_exploitation
+					duration = 365
+				}
+			}
+		release = ANG
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = "Never!"
+                BRZ = { country_event = 1822333 }
+		any_owned = {
+				limit = {
+					OR = {
+						province_id = 2000
+						region = POR_2003
+						region = POR_2006
+						region = POR_1999
+					}
+				}
+				add_core = ANG
+				add_province_modifier = {
+					name = colonial_exploitation
+					duration = 365
+				}
+			}
+			MOZ = {
+				primary_culture = THIS
+				set_country_flag = civilize_after_release
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						region = POR_2049
+						region = POR_2053
+						region = POR_2060
+					}
+				}
+				add_core = MOZ
+				add_province_modifier = {
+					name = colonial_exploitation
+					duration = 1049
+				}
+			}
+                release = ANG
+                release = MOZ
+		war = {
+			target = ANG
+			attacker_goal = {
+				casus_belli = conquest
+			}
+			call_ally = no
+		}
+		ANG = {
+			small_arms = 100
+			canned_food = 200
+			artillery = 50
+			luxury_clothes = 50
+			wine = 50
+			liquor = 50
+			ammunition = 100
+			money = 100000
+		}
+		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+#Revolução Liberal
+country_event = {
+	id = 701222
+	title = "A Revolução Liberal do Porto"
+	desc = "EVTDESC701222"
+        picture = "revolucao"
+
+	trigger = {
+		tag = PBA
+		year = 1820
+
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+
+	option = {
+		name = "We will make a Constitution"
+                add_accepted_culture = brazilian
+		prestige = 10
+		political_reform = naturalization
+		political_reform = censored_press
+		political_reform = two_year_draft
+		political_reform = wealth_weighted_voting
+		political_reform = limited
+		political_reform = gerrymandering
+                capital = 521
+                set_country_flag = revolução_do_porto
+		ai_chance = {
+			factor = 90
+		}
+	}
+
+	option = {
+		name = "Dom João VI won't accept this!"
+		remove_accepted_culture = brazilian
+                release = POR
+                POR = { government = democracy }
+		war = {
+			target = POR
+			attacker_goal = {
+				casus_belli = conquest
+			}
+			call_ally = no
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+
+	option = {
+		name = "We will make a Republic!"
+                government = democracy
+                add_accepted_culture = brazilian
+		prestige = 10
+		political_reform = naturalization
+		political_reform = censored_press
+		political_reform = two_year_draft
+		political_reform = wealth_weighted_voting
+		political_reform = limited
+		political_reform = gerrymandering
+                capital = 521
+		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+#Revolução Mexicana
+country_event = {
+	id = 182333
+	title = "The Mexican Empire"
+	desc = "EVTDESC182333"
+        major = yes
+
+	trigger = {
+		tag = MEX
+		year = 1822
+
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+
+	option = {
+		name = "Long Live the Emperor!"
+                add_accepted_culture = central_american
+                government = hms_government
+		prestige = 10
+		political_reform = naturalization
+		political_reform = censored_press
+		political_reform = two_year_draft
+		political_reform = wealth_weighted_voting
+		political_reform = limited
+		political_reform = gerrymandering
+                set_country_flag = emperor
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = "The Emperor is a Traitor! Execute Him!"
+                government = democracy
+		prestige = 10
+		political_reform = naturalization
+		political_reform = censored_press
+		political_reform = two_year_draft
+		political_reform = wealth_weighted_voting
+		political_reform = limited
+		political_reform = gerrymandering
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Dom João Dies
+country_event = {
+	id = 184555
+	title = "Emperor Pedro"
+	desc = "EVTDESC184555"
+        major = yes
+
+	trigger = {
+		tag = PBA
+		year = 1845
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+
+	option = {
+		name = "Long Live the Emperor!"
+                add_accepted_culture = portuguese
+                primary_culture = brazilian
+                capital = 2447
+                change_tag = LBE
+                government = hms_government
+		BRZ = {
+			all_core = { remove_core = BRZ }
+		}
+                set_country_flag = emperor_pedro
+		prestige = 10
+		political_reform = naturalization
+		political_reform = free_press
+		political_reform = no_draft
+		political_reform = wealth_weighted_voting
+		political_reform = protection
+		political_reform = gerrymandering
+                set_country_flag = emperor
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = "Dom Pedro will be our King"
+		prestige = 10
+                set_country_flag = emperor_pedro
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Dom Sebastiam lives
+country_event = {
+	id = 15778
+	title = "Legends of a lost King"
+	desc = "EVTDESC15778"
+        major = yes
+
+	trigger = {
+		tag = POR
+		has_country_flag = alcacer_quibir
+                NOT = { has_country_flag = investigate }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+
+	option = {
+		name = "We should investigate"
+                set_country_flag = investigate
+		prestige = 10
+                ai_change = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = "Ignore it."
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Dom Sebastiam lives2
+country_event = {
+	id = 157788
+	title = "El Rey is alive?"
+	desc = "EVTDESC157788"
+        major = yes
+
+	trigger = {
+		tag = POR
+		has_country_flag = investigate
+                NOT = { has_country_flag = el_rey }
+                NOT = { has_country_flag = ignore }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+
+	option = {
+		name = "Bring the man to Lisbon!"
+                set_country_flag = el_rey
+		money = -10
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = "Ignore it."
+                set_country_flag = ignore
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Dom Sebastiam lives3
+country_event = {
+	id = 1577888
+	title = "The Return of the King!"
+	desc = "EVTDESC1577888"
+        major = yes
+
+	trigger = {
+		tag = POR
+		has_country_flag = el_rey
+                NOT = { has_country_flag = el_rey_returns }
+                NOT = { has_country_flag = ignore }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+
+	option = {
+		name = "Long Live the Avis Dynasty!"
+                set_country_flag = el_rey_returns
+		prestige = 10
+                change_tag = KPO
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = "Ignore it."
+                prestige = -10
+                POR = {
+                      all_core = { add_core = KPO }
+                }
+		rich_strata = {
+		            militancy = 900
+		            consciousness = 900
+	        }
+		middle_strata = {
+		              militancy = 900
+		              consciousness = 900
+	        }
+                set_country_flag = el_rey_returns
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Dom Sebastiam lives4
+country_event = {
+	id = 15778888
+	title = "The King is Dead!"
+	desc = "EVTDESC15778888"
+        major = yes
+
+	trigger = {
+		tag = KPO
+		has_country_flag = el_rey_returns
+                NOT = { has_country_flag = el_rey_dead }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+
+	option = {
+		name = "Long Live the Heir of Avis!"
+                set_country_flag = el_rey_dead
+		prestige = 10
+		research_points = 1000000
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Age of Mauá
+country_event = {
+	id = 183550
+	title = "Era Mauá"
+	desc = "EVTDESC183550"
+        picture = "visconde_maua"
+
+	trigger = {
+                primary_culture = brazilian
+		year = 1850
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+
+	option = {
+		name = "Let the progress come to the Empire."
+                prestige = 30
+                set_country_flag = ageofmaua
+	        add_country_modifier = { name = small_immigration_boom duration = 730 }
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Companhia de Navegacao do Amazonas
+country_event = {
+	id = 185050
+	title = "Companhia de Navegação do Amazonas"
+	desc = "EVTDESC185050"
+        major = yes
+
+	trigger = {
+		primary_culture = brazilian
+		year = 1850
+                has_country_flag = ageofmaua
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+
+	option = {
+		name = "We Start to settle!"
+		prestige = 10
+                3255 = { secede_province = THIS }
+		3256 = { secede_province = THIS }
+		2401 = { secede_province = THIS }
+                set_country_flag = settle_amazonas
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Border fixer
+country_event = {
+	id = 196111
+	title = "Border Fixer"
+	desc = "We just need to fix the border. Can't fix the bug in the main codes"
+        major = yes
+
+	trigger = {
+		tag = ENG
+                month = 7
+		year = 1861
+                exists = HND
+                owns = 1230
+                owns = 1237
+                owns = 1228
+                owns = 1288
+                owns = 1291
+                owns = 1337
+                owns = 1333
+                NOT = { has_country_flag = border_fix }
+                NOT = { month = 9 }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 1
+	}
+
+	option = {
+		name = "Fix the borders"
+		prestige = 10
+                HND = { release = BUR }
+                inherit = HND
+                set_country_flag = border_fix
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Revolução Russa
+country_event = {
+	id = 191777
+	title = "The Russian Revolution"
+	desc = "EVTDESC191777"
+        picture = "lenin"
+        major = yes
+
+	trigger = {
+		tag = RUS
+		year = 1917
+
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+
+	option = {
+		name = "All Power to the Soviets!"
+                government = proletarian_dictatorship
+		prestige = 10
+		ruling_party_ideology = communist
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = no_meeting
+		political_reform = state_press
+		political_reform = state_controlled
+		political_reform = underground_parties
+		political_reform = nobody_gets_out
+		political_reform = mandatory_service
+		political_reform = protected
+		political_reform = no_slavery
+		social_reform = good_minimum_wage
+		social_reform = eight_hours
+		social_reform = good_subsidies
+		social_reform = good_pensions
+		social_reform = good_health_care
+		nationalize = yes
+                set_global_flag = russian_revolution
+		ai_chance = {
+			factor = 60
+		}
+	}
+
+	option = {
+		name = "A Socialist Democracy!"
+                government = proletarian_democracy
+		prestige = 10
+		ruling_party_ideology = socialist
+		political_reform = population_equal_weight
+		political_reform = universal_voting
+		political_reform = yes_meeting
+		political_reform = free_press
+		political_reform = all_trade_unions
+		political_reform = secret_ballots
+		political_reform = proportional_representation
+		political_reform = protected
+		political_reform = no_draft
+		political_reform = naturalization
+		political_reform = no_slavery
+		social_reform = good_minimum_wage
+		social_reform = eight_hours
+		social_reform = good_subsidies
+		social_reform = good_pensions
+		social_reform = good_health_care
+		nationalize = yes
+                set_global_flag = russian_revolution
+		ai_chance = {
+			factor = 60
+		}
+	}
+
+	option = {
+		name = "Reform the Monarchy"
+		political_reform = population_equal_weight
+		political_reform = universal_voting
+		political_reform = yes_meeting
+		political_reform = free_press
+		political_reform = all_trade_unions
+		political_reform = secret_ballots
+		political_reform = proportional_representation
+		political_reform = protected
+		political_reform = no_draft
+		political_reform = naturalization
+		political_reform = no_slavery
+		ruling_party_ideology = liberal
+                set_global_flag = russian_revolution
+		ai_chance = {
+			factor = 10
+		}
+	}
+
+	option = {
+		name = "We will make a Republic!"
+                government = democracy
+		prestige = 10
+		political_reform = population_equal_weight
+		political_reform = universal_voting
+		political_reform = yes_meeting
+		political_reform = free_press
+		political_reform = all_trade_unions
+		political_reform = secret_ballots
+		political_reform = proportional_representation
+		political_reform = protected
+		political_reform = no_draft
+		political_reform = naturalization
+		political_reform = no_slavery
+		ruling_party_ideology = liberal
+                set_global_flag = russian_revolution
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+#Brazilian Colonization
+country_event = {
+	id = 70122
+	title = "How Brazil will fit in the Empire?"
+	desc = "EVTDESC70122"
+        picture = "brazil"
+
+	trigger = {
+		tag = PBA
+		year = 1820
+                has_country_flag = revolução_do_porto
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+	option = {
+		name = "Brazil is the heart of Portugal!"
+                add_accepted_culture = portuguese
+                primary_culture = brazilian
+		BRZ = {
+			all_core = { remove_core = BRZ }
+		}
+		prestige = 10
+                capital = 2447
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = "A colony can never be a Kingdom!"
+		remove_accepted_culture = brazilian
+                BRZ = {  
+                        all_core = { remove_core = PBA }
+                }
+		any_pop = {
+			militancy = 20
+		}
+                set_country_flag = recolonization
+		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+#Dia do Fico
+country_event = {
+	id = 7012222
+	title = "Dia do Fico"
+	desc = "EVTDESC7012222"
+        picture = "diadofico"
+
+	trigger = {
+		tag = PBA
+		year = 1820
+                has_country_flag = recolonization
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+	option = {
+		name = "So, Prince Pedro is rebelling against us?"
+		any_pop = {
+			militancy = 20
+		}
+                set_global_flag = dia_do_fico
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Dissolution of the FRCA
+country_event = {
+	id = 7016
+	title = "Dissolution of the FRCA"
+	desc = "EVTDESC7016"
+
+	trigger = {
+		tag = UCA
+		year = 1838
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+
+	option = {
+		name = "Divide the Country."
+		UCA_2201 = {
+			add_core = COS
+		}
+		UCA_2197 = {
+			add_core = NIC
+		}
+		UCA_2186 = {
+			add_core = GUA
+		}
+		MEX_2182 = {
+			add_core = GUA
+		}
+		2193 = {
+			add_core = HON
+		}
+		2194 = {
+			add_core = HON
+		}
+		2195 = {
+			add_core = HON
+		}
+		2196 = {
+			add_core = HON
+		}
+		2191 = {
+			add_core = ELS
+		}
+		2192 = {
+			add_core = ELS
+		}
+		all_core = {
+			remove_core = UCA
+		}
+		release = COS
+		release = NIC
+		release = HON
+		release = ELS
+		change_tag = GUA
+		
+		ai_chance = {
+			factor = 90
+		}
+	}
+	option = {
+		name = "We shall stay united!"
+		UCA_2201 = {
+			add_core = COS
+		}
+		UCA_2197 = {
+			add_core = NIC
+		}
+		2193 = {
+			add_core = HON
+		}
+		2194 = {
+			add_core = HON
+		}
+		2195 = {
+			add_core = HON
+		}
+		2196 = {
+			add_core = HON
+		}
+		2191 = {
+			add_core = ELS
+		}
+		2192 = {
+			add_core = ELS
+		}
+		release = COS
+		release = NIC
+		release = HON
+		release = ELS
+		war = {
+			target = COS
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		war = {
+			target = NIC
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		war = {
+			target = HON
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		war = {
+			target = ELS
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+#Hungarian Revolution
+country_event = {
+	id = 7019
+	title = "Hungarian Revolution"
+	desc = "EVTDESC7019"
+	
+	trigger = {
+		tag = AUS
+		year = 1848
+		NOT = { exists = HUN }
+		any_owned_province = {
+			is_core = HUN
+		}
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+	
+	option = {
+		name = "Damn them!"
+		release = HUN
+		war = {
+			target = HUN
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		HUN = {
+			small_arms = 100
+			canned_food = 200
+			artillery = 50
+			luxury_clothes = 50
+			wine = 50
+			liquor = 50
+			ammunition = 100
+			money = 1000
+		}
+		
+		ai_chance = {
+			factor = 90
+		}
+	}
+	option = {
+		name = "Let them go."
+		all_core = {
+			limit = { 
+				is_core = HUN
+			}
+			remove_core = THIS
+		}
+		release = HUN
+
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+#Uruguay
+country_event = {
+	id = 7024
+	title = "Uruguay"
+	desc = "EVTDESC7024"
+
+	trigger = {
+		URU_2344 = { owned_by = THIS }
+                year = 1828
+                war = no
+                has_global_flag = the_empire
+                NOT = { has_country_flag = cisplatine_war }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 36
+	}
+	
+	option = {
+		name = "Damn them!"
+		URU = {
+			all_core = { remove_core = BRZ }
+		}
+		URU = {
+			all_core = { remove_core = ARG }
+		}
+		release = URU
+                set_country_flag = cisplatine_war
+		war = {
+			target = URU
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			call_ally = no
+		}
+		URU = {
+			small_arms = 100
+			canned_food = 200
+			artillery = 50
+			luxury_clothes = 50
+			wine = 50
+			liquor = 50
+			ammunition = 100
+			money = 1000
+                        war = {
+                                target = ARG
+                                attacker_goal = {
+                                        causus_belli = status_quo
+                                }
+                                defender_goal = {
+                                        causus_belli = annex_core_country
+                                }
+		}
+
+		ai_chance = {
+			factor = 70
+		}
+
+	option = {
+		name = "Let them go."
+		URU = {
+			all_core = { remove_core = BRZ }
+		}
+		URU = {
+			all_core = { remove_core = ARG }
+		}
+		release = URU
+		
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 2
+				war_exhaustion = 10
+			}
+			modifier = {
+				factor = 2
+				year = 1825
+			}
+			modifier = {
+				factor = 2
+				average_militancy = 5
+			}
+		}
+	}
+}
+

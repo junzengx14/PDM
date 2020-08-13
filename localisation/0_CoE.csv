@@ -1,0 +1,22 @@
+german;German;;;;;;;;;;;;;x;;;;
+CoE_NAME;Concert of Europe;;;;;;;;;;;;;x;;;;
+CoE_DESC;After the end of the Napoleonic wars the great powers of Europe gathered in Vienna to hold a congress. The aim of the Congress of Vienna was to balance the power on the continent and avoid future conflicts similar to the Napoleonic Wars. The congress led to a period of relative peace inside Europe that would last until the first World War. This would come to be called the Concert of Europe.;;;;;;;;;x;;;;
+han;Han;;;;;;;;;;;;;x;;;;
+judaism;Judaism;;;;;;;;;;;;;x;;;;
+pan_jewish;Jewish;;;;;;;;;;;;;x;;;;
+karelian;Karelian;;;;;;;;;;;;;x;;;;
+breton;Breton;;;;;;;;;;;;;x;;;;
+galician;Galician;;;;;;;;;;;;;x;;;;
+assyrian;Assyrian;;;;;;;;;;;;;x;;;;
+scramble_for_africa;Scramble For Africa;;;;;;;;;;;;;x;;
+scramble_for_africa_desc;Force an §Yuncivilized country§W to secede territory to form a colonial concession.;Obligez un §Ypays non civilisé§W à faire sécession d'un territoire pour former une concession coloniale.;Zwingen Sie ein §Yunzivilisiertes Land§W, Gebiete zur Gründung einer Kolonie abzuspalten.;;Obliga a un §Ypaís incivilizado§W a escindir territorio para formar una concesión colonial.;;;;;;;;;x;;
+scramble_for_africa_setup;Demand that $RECIPIENT$ secede territory to form a colonial concession.;Demandez à ce que $RECIPIENT$ fasse sécession d'un territoire pour former une concession coloniale.;Verlangen Sie, dass $RECIPIENT$ Gebiete zur Gründung einer Kolonie abspaltet.;;Exigir que $RECIPIENT$ escinda territorio para formar una concesión colonial.;;;;;;;;;x;;
+scramble_for_africa_short;Demand $STATE$;Demande $STATE$;Fordern Sie $STATE$;;Exigir $STATE$;;;;;;;;;x;;
+TRIGGER_STATE;State;État;Staat;;Estado;;;;;;;;;x
+circassian;Circassian;;;;;;;;;;;;;x;;;;
+dagestani;Dagestani;;;;;;;;;;;;;x;;;;
+vainakh;Vainakh;;;;;;;;;;;;;x;;;;
+ossetian;Ossetian;;;;;;;;;;;;;x;;;;
+abkhaz;Abkhaz;;;;;;;;;;;;;x;;;;
+north_caucasian;Caucasian;;;;;;;;;;;;;x;;;;
+misri;Egyptian;;;;;;;;;;;;;x;;;;

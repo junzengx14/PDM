@@ -1,0 +1,18 @@
+owner = TUR
+controller = TUR
+add_core = GRE
+add_core = RME
+trade_goods = fish
+life_rating = 35
+terrain = hilly_grassland
+1836.1.1 = {
+	controller = GRE 
+	owner = GRE
+}
+1861.1.1 = {
+	state_building = {
+		level = 1
+		building = steamer_shipyard
+		upgrade = yes
+	}
+}

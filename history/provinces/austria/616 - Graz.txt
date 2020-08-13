@@ -1,0 +1,8 @@
+owner = AUS
+controller = AUS
+add_core = AUS
+add_core = RME
+trade_goods = lead
+life_rating = 33
+terrain = deciduous_forest_hills
+1861.1.1 = { railroad = 3 }

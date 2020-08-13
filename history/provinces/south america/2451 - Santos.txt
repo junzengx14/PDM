@@ -1,0 +1,13 @@
+owner = PBR
+controller = PBR
+add_core = BRZ
+add_core = SAO
+add_core = PBR
+trade_goods = coffee
+life_rating = 35
+terrain = hilly_farmland
+1825.1.1 = {
+	controller = BRZ
+	owner = BRZ
+	add_core = BRZ
+}

@@ -1,0 +1,20 @@
+add_core = KZB
+trade_goods = tobacco
+life_rating = 10
+terrain = dry_forest_hills
+1903.1.1 = {
+		owner = ENG
+		controller = ENG
+		colonial = 2
+		}
+
+
+trade_goods = tobacco
+life_rating = 15
+
+add_core = ZAM
+1960.1.1 = {
+	owner = ZAM
+	controller = ZAM
+	colonial = 0
+		}

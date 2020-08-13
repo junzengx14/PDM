@@ -1,0 +1,9 @@
+owner = BAD
+controller = BAD
+add_core = BAD
+add_core = GER
+add_core = RME
+trade_goods = fruit
+life_rating = 36
+terrain = deciduous_forest_hills
+1861.1.1 = { railroad = 3 }

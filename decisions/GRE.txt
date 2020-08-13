@@ -1,0 +1,803 @@
+political_decisions = {
+	hellenic_parliament = {
+		potential = {
+			tag = GRE
+			government = absolute_monarchy
+			NOT = {
+				has_country_flag = voule_ton_ellinon
+			}
+		}
+	
+		allow = {
+			plurality = 10
+			prestige = 40
+		}
+		
+		effect = {
+			set_country_flag = voule_ton_ellinon
+			political_reform = wealth_weighted_voting
+			random_owned = {
+				limit = {
+					owner = { political_parties = underground_parties }
+				}
+				owner = {
+					political_reform = harassment
+				}
+			}
+			government = prussian_constitutionalism
+			prestige = 20
+			any_pop = {
+				militancy = -2
+			}
+		}
+	}
+	
+	megali_idea = {
+		potential = {
+			tag = GRE
+			NOT = { has_country_flag = greece_has_got_a_brand_new_bag }
+		}
+		
+		allow = {
+			is_greater_power = yes
+			owns = 832
+			owns = 805
+			owns = 823
+			owns = 844
+			owns = 843
+			owns = 846
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = -5
+			TUR_860 = {
+				add_core = GRE
+			}
+			TUR_863 = {
+				add_core = GRE
+			}
+			TUR_869 = {
+				add_core = GRE
+			}
+			SER = {
+				all_core = { add_core = GRE }
+			}
+			ALB = {
+				all_core = { add_core = GRE }
+			}
+                        MON = {
+				all_core = { add_core = GRE }
+                        }
+                        BUL = {
+				all_core = { add_core = GRE }
+                        }
+
+			set_country_flag = greece_has_got_a_brand_new_bag
+		}
+	}
+	
+	form_byzantine_empire = {
+		potential = {
+			tag = GRE
+			has_country_flag = greece_has_got_a_brand_new_bag
+		}
+		
+		allow = {
+			is_greater_power = yes
+                        owns = 860
+                        owns = 783
+                        owns = 794
+                        owns = 809
+                        owns = 849
+                        owns = 834
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+		}
+		
+		effect = {
+			RME = {
+				all_core = { add_core = BYZ }
+			}                        
+                        change_tag = BYZ
+			capital = 860
+			860 = {
+				change_province_name = "Constantinople"
+			}
+			add_accepted_culture = north_italian
+			add_accepted_culture = south_italian
+			add_accepted_culture = bulgarian
+			add_accepted_culture = greek
+			add_accepted_culture = serbian
+			add_accepted_culture = croatian
+			add_accepted_culture = bosniak
+			add_accepted_culture = romanian
+			add_accepted_culture = slovene
+			add_accepted_culture = kurdish
+			add_accepted_culture = armenian
+			add_accepted_culture = mashriqi
+			add_accepted_culture = bedouin
+			add_accepted_culture = misri
+			add_accepted_culture = maghrebi
+			any_owned = {
+				limit = {
+					is_colonial = no
+					OR = {
+						culture = greek
+						culture = turkish
+					}
+				}
+				add_core = BYZ
+			}
+			prestige = 40
+			badboy = -10
+		}
+	}
+
+	form_hellenic_empire = {
+		picture = hellas_pic
+                potential = {
+			tag = GRE
+			has_country_flag = greece_has_got_a_brand_new_bag
+		}
+		
+		allow = {
+			is_greater_power = yes
+                        owns = 860
+                        owns = 783
+                        owns = 794
+                        owns = 809
+                        owns = 849
+                        owns = 834
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+		}
+		
+		effect = {
+			JOR = {
+				all_core = { add_core = HEL }
+			}                        
+			IRQ = {
+				all_core = { add_core = HEL }
+			}                        
+			SYR = {
+				all_core = { add_core = HEL }
+			}                        
+			TUR = {
+				all_core = { add_core = HEL }
+			}                        
+			PNJ = {
+				all_core = { add_core = HEL }
+			}                        
+			MAK = {
+				all_core = { add_core = HEL }
+			}                        
+			KAL = {
+				all_core = { add_core = HEL }
+			}                        
+			AFG = {
+				all_core = { add_core = HEL }
+			}                        
+			PER = {
+				all_core = { add_core = HEL }
+			}  
+			PLS = {
+				all_core = { add_core = HEL }
+			} 
+			LBN = {
+				all_core = { add_core = HEL }
+			} 
+			EGY = {
+				all_core = { add_core = HEL }
+			} 
+			BUL = {
+				all_core = { add_core = HEL }
+			} 
+			ARM = {
+				all_core = { add_core = HEL }
+			}
+			KDS = {
+				all_core = { add_core = HEL }
+			}   
+			RUS_1196 = {
+				add_core = HEL
+			}               
+                        change_tag = HEL
+			capital = 860
+			860 = {
+				change_province_name = "Constantinople"
+			}
+			add_accepted_culture = north_italian
+			add_accepted_culture = persian
+			add_accepted_culture = bulgarian
+			add_accepted_culture = greek
+			add_accepted_culture = serbian
+			add_accepted_culture = croatian
+			add_accepted_culture = bosniak
+			add_accepted_culture = romanian
+			add_accepted_culture = slovene
+			add_accepted_culture = kurdish
+			add_accepted_culture = armenian
+			add_accepted_culture = mashriqi
+			add_accepted_culture = bedouin
+			add_accepted_culture = misri
+			add_accepted_culture = maghrebi
+			any_owned = {
+				limit = {
+					is_colonial = no
+					OR = {
+						culture = greek
+						culture = turkish
+					}
+				}
+				add_core = HEL
+			}
+			prestige = 40
+			badboy = -10
+		}
+	}
+         
+        alexander_idea = {
+        picture = alexander	
+	potential = {
+			tag = HEL
+			NOT = { has_country_flag = the_great_hellas }
+		}
+		
+		allow = {
+			is_greater_power = yes
+			owns = 1745
+			owns = 1121
+			owns = 876
+			owns = 926
+			owns = 902
+			owns = 917
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = -5
+                        ENG_2094 = { add_core = HEL }
+                        EGY_1842 = { add_core = HEL }
+                        ENG_1844 = { add_core = HEL }
+                        TRI_1735 = { add_core = HEL }
+                        ALD_1718 = { add_core = HEL }
+                        ALD_1714 = { add_core = HEL }
+			HND = {
+				all_core = { add_core = HEL }
+			}
+			HAL = {
+				all_core = { add_core = HEL }
+			}
+                        AZB = {
+				all_core = { add_core = HEL }
+			}
+			MOR = {
+				all_core = { add_core = HEL }
+			}
+			NEJ = {
+				all_core = { add_core = HEL }
+			}
+			YEM = {
+				all_core = { add_core = HEL }
+			}
+			OMA = {
+				all_core = { add_core = HEL }
+			}
+			HDJ = {
+				all_core = { add_core = HEL }
+			}
+			ABU = {
+				all_core = { add_core = HEL }
+			}
+			NYE = {
+				all_core = { add_core = HEL }
+			}
+			BHR = {
+				all_core = { add_core = HEL }
+			}
+			TRI = {
+				all_core = { add_core = HEL }
+			}
+                        CYR = {
+				all_core = { add_core = HEL }
+                        }
+                        BUR = {
+				all_core = { add_core = HEL }
+                        }
+                        ITA = {
+				all_core = { add_core = HEL }
+                        }
+                        ROM = {
+				all_core = { add_core = HEL }
+                        }
+                        CRO = {
+				all_core = { add_core = HEL }
+                        }
+                        SLO = {
+				all_core = { add_core = HEL }
+                        }
+                        TUN = {
+				all_core = { add_core = HEL }
+                        }
+                        ALD = {
+				all_core = { add_core = HEL }
+                        }
+                        GEO = {
+				all_core = { add_core = HEL }
+                        }
+                        ARM = {
+				all_core = { add_core = HEL }
+                        }
+
+			set_country_flag = the_great_hellas
+		}
+	}
+
+	form_rhomania = {
+		picture = Roma_pic
+		potential = {
+			tag = HEL
+		}
+		
+		allow = {
+			is_greater_power = yes
+			749 = { owned_by = HEL }
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+		}
+		
+		effect = {
+			HEL = {
+				all_core = { add_core = GRM }
+			}                        
+                        change_tag = GRM
+			capital = 860
+			prestige = 40
+			badboy = -10
+		}
+	}
+	
+	form_the_empire_of_the_romans = {
+		picture = Roma_pic
+		potential = {
+			tag = BYZ
+		}
+		
+		allow = {
+			is_greater_power = yes
+			749 = { owned_by = BYZ }
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+		}
+		
+		effect = {
+			BYZ = {
+				all_core = { add_core = SPQ }
+			}                        
+                        change_tag = SPQ
+			capital = 749
+			add_accepted_culture = french
+			add_accepted_culture = swiss
+			add_accepted_culture = south german
+			add_accepted_culture = north german
+			add_accepted_culture = breton
+			add_accepted_culture = catalan
+			add_accepted_culture = spanish
+			add_accepted_culture = portuguese
+			add_accepted_culture = basque
+			add_accepted_culture = flemish
+			add_accepted_culture = wallonian
+			add_accepted_culture = dutch
+			add_accepted_culture = british
+			prestige = 40
+			badboy = -10
+		}
+	}
+
+	constantinople2 = {
+		picture = constantinople1453
+		potential = {
+			tag = SPQ
+			NOT = { has_country_flag = constantinople }
+		}
+		
+		allow = {
+			is_greater_power = yes
+			owns = 860
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+		}
+		
+		effect = {
+			war_exhaustion = -2
+			prestige = 2
+			badboy = -10
+			860 = {
+				change_province_name = "Constantinople"
+			}
+
+			set_country_flag = constantinople
+                }
+         }
+
+	delenda_cartago2 = {
+		picture = PunicWars1
+		potential = {
+			tag = SPQ
+			NOT = { has_country_flag = delenda_est_cartago }
+		}
+		
+		allow = {
+			is_greater_power = yes
+			owns = 1725
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+		}
+		
+		effect = {
+			war_exhaustion = -2
+			badboy = -5
+			set_country_flag = delenda_est_cartago
+			1725 = {
+				change_province_name = "Cartago"
+			}
+                }
+        }
+
+	mare_nostrum2 = {
+		picture = marenostrum
+		potential = {
+			tag = SPQ
+			NOT = { has_country_flag = mare_nostrum }
+		}
+		
+		allow = {
+			is_greater_power = yes
+                        owns = 860
+                        owns = 1725
+                        owns = 517
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+		}
+		
+		effect = {
+			war_exhaustion = -2
+			prestige = 2
+			badboy = -10
+			set_country_flag = mare_nostrum
+                }
+         }
+        
+	roman_empire2 = {
+		picture = caesar
+		potential = {
+			tag = SPQ
+			NOT = { has_country_flag = rome_restored }
+		}
+		
+		allow = {
+			is_greater_power = yes
+			all_core = { owned_by = THIS }
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+		}
+		
+		effect = {
+			war_exhaustion = -2
+			prestige = 20
+			set_country_flag = rome_restored
+			badboy = -10
+                }
+        }
+
+	european_empire3 = {
+                picture = empire_europa_pic
+		potential = {
+			tag = SPQ
+			NOT = { has_country_flag = post_colonial_country }
+		}
+		
+		allow = {
+			is_greater_power = yes
+			all_core = { owned_by = THIS }
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+		}
+
+		effect = {
+			prestige = 200
+			badboy = -5
+			add_accepted_culture = russian
+			add_accepted_culture = byelorussian
+			add_accepted_culture = ukrainian
+			add_accepted_culture = polish
+			add_accepted_culture = latvian
+			add_accepted_culture = estonian
+			add_accepted_culture = lithuanian
+			add_accepted_culture = swedish
+			add_accepted_culture = finnish
+			add_accepted_culture = norwegian
+			add_accepted_culture = danish
+                        ENG_2094 = { add_core = SPQ }
+                        EGY_1842 = { add_core = SPQ }
+                        ENG_1844 = { add_core = SPQ }
+                        TRI_1735 = { add_core = SPQ }
+                        ALD_1718 = { add_core = SPQ }
+                        ALD_1714 = { add_core = SPQ }
+			FRA = {
+				all_core = { add_core = SPQ }
+			}
+			GER = {
+				all_core = { add_core = SPQ }
+			}
+			KUK = {
+				all_core = { add_core = SPQ }
+			}
+			SUD = {
+				all_core = { add_core = SPQ }
+			}
+			SPA = {
+				all_core = { add_core = SPQ }
+			}
+			POR = {
+				all_core = { add_core = SPQ }
+			}
+			NET = {
+				all_core = { add_core = SPQ }
+			}
+                        SCO = {
+				all_core = { add_core = SPQ }
+                        }
+                        MOR = {
+				all_core = { add_core = SPQ }
+                        }
+                        IRE = {
+				all_core = { add_core = SPQ }
+                        }
+                        DEN = {
+				all_core = { add_core = SPQ }
+                        }
+                        HUN = {
+				all_core = { add_core = SPQ }
+                        }
+                        POL = {
+				all_core = { add_core = SPQ }
+                        }
+                        ROM = {
+				all_core = { add_core = SPQ }
+                        }
+                        BUL = {
+				all_core = { add_core = SPQ }
+                        }
+                        ALB = {
+				all_core = { add_core = SPQ }
+                        }
+                        GRE = {
+				all_core = { add_core = SPQ }
+                        }
+                        SER = {
+				all_core = { add_core = SPQ }
+                        }
+                        MON = {
+				all_core = { add_core = SPQ }
+                        }
+                        UKR = {
+				all_core = { add_core = SPQ }
+                        }
+                        BYE = {
+				all_core = { add_core = SPQ }
+                        }
+                        EST = {
+				all_core = { add_core = SPQ }
+                        }
+                        LAT = {
+				all_core = { add_core = SPQ }
+                        }
+                        LIT = {
+				all_core = { add_core = SPQ }
+                        }
+                        FIN = {
+				all_core = { add_core = SPQ }
+                        }
+                        SWE = {
+				all_core = { add_core = SPQ }
+                        }
+                        NOR = {
+				all_core = { add_core = SPQ }
+                        }
+                        TRI = {
+				all_core = { add_core = SPQ }
+                        }
+                        EGY = {
+				all_core = { add_core = SPQ }
+                        }
+                        NEJ = {
+				all_core = { add_core = SPQ }
+                        }
+                        PER = {
+				all_core = { add_core = SPQ }
+                        }
+                        ARM = {
+				all_core = { add_core = SPQ }
+                        }
+                        GEO = {
+				all_core = { add_core = SPQ }
+                        }
+                        HAL = {
+				all_core = { add_core = SPQ }
+                        }
+                        HDJ = {
+				all_core = { add_core = SPQ }
+                        }
+                        YEM = {
+				all_core = { add_core = SPQ }
+                        }
+                        NYE = {
+				all_core = { add_core = SPQ }
+                        }
+                        ABU = {
+				all_core = { add_core = SPQ }
+                        }
+                        OMA = {
+				all_core = { add_core = SPQ }
+                        }
+                        AFG = {
+				all_core = { add_core = SPQ }
+                        }
+                        KAL = {
+				all_core = { add_core = SPQ }
+                        }
+                        MAK = {
+				all_core = { add_core = SPQ }
+                        }
+                        AZB = {
+				all_core = { add_core = SPQ }
+                        }
+                        AUS = {
+				all_core = { add_core = SPQ }
+                        }
+
+                        set_country_flag = post_colonial_country 
+		}
+	}
+        
+	unite_with_greece = {
+
+		potential = {
+			primary_culture = greek
+			NOT = { tag = GRE }
+			exists = GRE
+			NOT = { has_country_flag = unite_with_greece }
+		}
+
+		allow = {
+			war = no
+			is_vassal = no
+			OR = {
+				part_of_sphere = no
+				sphere_owner = { is_sphere_leader_of = GRE }
+			}
+			GRE = {
+				war = no
+				is_vassal = no
+			}
+		}
+
+		effect = {
+			set_country_flag = unite_with_greece
+			random_country = {
+				limit = {
+					tag = GRE
+					ai = yes
+					THIS = { ai = yes }
+				}
+				inherit = THIS
+			}
+			random_country = {
+				limit = {
+					tag = GRE
+					ai = yes
+					THIS = { ai = no }
+				}
+				any_owned = { secede_province = THIS }
+				THIS = {
+					random_owned = {
+						limit = { province_id = 834 }
+						owner = { capital = 834 }
+					}
+					change_tag = GRE
+				}	
+			}
+			random_country = {
+				limit = {
+					tag = GRE
+					ai = no
+				}
+				country_event = 60130
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				government = fascist_dictatorship
+				GRE = {
+					NOT = { government = fascist_dictatorship }
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = { government = fascist_dictatorship }
+				GRE = { government = fascist_dictatorship }
+			}
+			modifier = {
+				factor = 0
+				NOT = { government = proletarian_dictatorship }
+				GRE = { government = proletarian_dictatorship }
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					government = democracy
+					government = hms_government
+				}
+				GRE = {
+					NOT = {
+						government = democracy
+						government = hms_government
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				GRE = {
+					OR = {
+						government = democracy
+						government = hms_government
+					}
+				}
+				NOT = {
+					government = democracy
+					government = hms_government
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					government = presidential_dictatorship
+					government = bourgeois_dictatorship
+					government = absolute_monarchy
+				}
+			}
+		}
+	}	
+}

@@ -1,0 +1,23 @@
+name = "War of Unity"
+
+1815.10.2 = {
+	add_attacker = PEU
+	add_defender = SPU
+	
+	# actor
+	# receiver
+	# casus_belli - cb type
+	# country - 3rd party
+	# state_province_id - target state capital
+	war_goal = {
+		casus_belli = conquest
+		actor = PEU
+		receiver = SPU
+	}
+
+}
+
+1824.4.21 = {
+	rem_attacker = PEU
+	rem_defender = SPU
+}

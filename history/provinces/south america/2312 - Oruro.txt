@@ -1,0 +1,14 @@
+owner = SPA
+controller = SPA
+add_core = BOL
+trade_goods = iron
+life_rating = 30
+terrain = cold_desert_mountains
+1836.1.1 = {
+	controller = PBC
+	owner = PBC
+}
+1861.1.1 = {
+	owner = BOL
+	controller = BOL
+}

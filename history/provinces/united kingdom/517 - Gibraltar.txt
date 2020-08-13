@@ -1,0 +1,10 @@
+owner = SPA
+controller = SPA
+add_core = SPA
+add_core = RME
+trade_goods = fish
+life_rating = 35
+terrain = dry_forest_hills
+colonial = 1
+naval_base = 2
+fort = 2

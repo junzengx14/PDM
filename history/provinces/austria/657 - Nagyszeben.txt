@@ -1,0 +1,9 @@
+owner = AUS
+controller = AUS
+add_core = SYL
+add_core = HUN
+add_core = ROM
+add_core = RME
+trade_goods = cattle
+life_rating = 31
+terrain = conifer_forest_hills

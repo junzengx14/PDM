@@ -1,0 +1,17 @@
+owner = SPA
+controller = SPA
+add_core = BRZ
+add_core = MTG
+add_core = MSS
+add_core = BOL 
+trade_goods = tropical_wood
+life_rating = 25
+terrain = marsh
+1836.1.1 = {
+	controller = PBC
+	owner = PBC
+}
+1861.1.1 = {
+	owner = BOL
+	controller = BOL
+}

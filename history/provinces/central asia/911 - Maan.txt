@@ -1,0 +1,8 @@
+owner = HAL
+controller = HAL
+add_core = JOR
+add_core = RME
+trade_goods = grain
+life_rating = 35
+terrain = desert
+

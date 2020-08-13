@@ -1,0 +1,3 @@
+CoE_NAME;Concert of Europe;;;;;;;;;;;;;x;;;;
+CoE_DESC;After the end of the Napoleonic wars the great powers of Europe gathered in Vienna to hold a congress. The aim of the Congress of Vienna was to balance the power on the continent and avoid future conflicts similar to the Napoleonic Wars. The congress led to a period of relative peace inside Europe that would last until the first World War. This would come to be called the Concert of Europe.;;;;;;;;;x;;;;
+BRZ_NAME;Independence or Death;;;;;;;;;;;;;x;;;;

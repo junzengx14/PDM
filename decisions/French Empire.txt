@@ -1,0 +1,532 @@
+political_decisions = {
+	bonapartist_spain = {
+                picture = create_iberia
+		potential = {
+			tag = FRE
+			has_country_flag = the_empire_reborn
+			NOT = { has_country_flag = bonapartist_spain }
+		}
+		allow = {
+			SPA = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+							war = no
+						}
+						owner = {
+							vassal_of = THIS
+							war = no
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 20
+                        set_country_flag = bonapartist_spain
+			inherit = SPA
+                        SPA = {
+                            all_core = { add_core = BSP }
+                        }
+                        SPC = {
+                            all_core = { add_core = BSP }
+                        }
+                        POR = {
+                            all_core = { add_core = BSP }
+                        }
+                        release_vassal = BSP
+		}
+	}
+
+	warsaw_duchy = {
+                picture = napoleoniii_pic
+		potential = {
+			tag = FRE
+			has_country_flag = the_empire_reborn
+			NOT = { has_country_flag = warsaw_duchy }
+		}
+
+		allow = {
+			CPL = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+						}
+					}
+				}
+			}
+			PZN = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 20
+                        set_country_flag = warsaw_duchy
+			inherit = CPL
+                        inherit = PZN
+                        CPL = {
+                            all_core = { add_core = DOW }
+                        }
+                        POL = {
+                            all_core = { add_core = DOW }
+                        }
+                        PZN = {
+                            all_core = { add_core = DOW }
+                        }
+                        release_vassal = DOW
+		}
+	}
+
+	rhine_confederation = {
+                picture = austerlitz
+		potential = {
+			tag = FRE
+			has_country_flag = the_empire_reconquer
+			NOT = { has_country_flag = rhine_confederation }
+                        exists = DOW
+		}
+
+		allow = {
+			619 = { controlled_by = FRE }
+			625 = { controlled_by = FRE }
+			641 = { controlled_by = FRE }
+			549 = { controlled_by = FRE }
+			GER = {
+				all_core = {
+					OR = {
+						owned_by = FRE
+						controlled_by = FRE
+						NOT = { is_core = FRE }
+					}
+				}
+			}
+			NOT = {
+				any_owned_province = { controlled_by = PRU }
+				any_owned_province = {
+					controller = { alliance_with = PRU }
+				}
+			}
+		}
+
+		effect = {
+			set_country_flag = rhine_confederation
+                        release = BAV
+                        release = CRH
+                        end_war = AUS
+                        end_war = KUK
+                        end_war = BAV
+                        end_war = BAD
+                        end_war = WES
+                        end_war = HAN
+                        end_war = BRA
+                        end_war = SAX
+                        end_war = PRU
+                        end_war = FRM
+                        end_war = HES
+                        end_war = HEK
+                        end_war = COB
+                        end_war = WEI
+                        end_war = DEN
+                        end_war = MEI
+                        end_war = NAS
+                        end_war = MEC
+                        end_war = BRE
+                        end_war = LUB
+                        end_war = HAM
+                        end_war = LIP
+                        end_war = WUR
+                        end_war = ANH
+                        end_war = SXL
+			PRU = { 
+                            release = WES
+                            release = RHI
+                        }
+                        GER = {
+                            all_core = { add_core = CRH }
+                        } 
+                        BAV = {
+                            inherit = WUR
+                            inherit = BAD
+                            inherit = BAV
+                            inherit = WES
+                            inherit = RHI
+                            inherit = HAN
+                            inherit = OLD
+                            inherit = BRE
+                            inherit = BRA
+                            inherit = SXL
+                            inherit = HES
+                            inherit = HEK
+                            inherit = SAX
+                            inherit = MEX
+                            inherit = LIP
+                            inherit = LUB
+                            inherit = NAS
+                            inherit = COB
+                            inherit = WEI
+                            inherit = MEI
+                            inherit = FRM
+                            change_tag = CRH
+                        }
+                        release = CRH
+		        diplomatic_influence = { who = CRH value = 400 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	end_austria = {
+                picture = austerlitz
+		potential = {
+			tag = FRE
+			has_country_flag = the_empire_reborn
+			NOT = { has_country_flag = end_austria }
+                        exists = DOW
+		}
+
+		allow = {
+			619 = { controlled_by = FRE }
+			625 = { controlled_by = FRE }
+			641 = { controlled_by = FRE }
+			AUS = {
+				all_core = {
+					OR = {
+						owned_by = FRE
+						controlled_by = FRE
+						NOT = { is_core = FRE }
+					}
+				}
+			}
+			NOT = {
+				any_owned_province = { controlled_by = AUS }
+				any_owned_province = {
+					controller = { alliance_with = AUS }
+				}
+			}
+		}
+
+		effect = {
+			set_country_flag = end_austria
+			AUS = { 
+                            release = CRO
+                            release = SYL
+                            release = BKV
+                            release = DOW
+                            release = SER
+                            release = RUT
+                            release = HUN
+                        }
+		        diplomatic_influence = { who = BKV value = 400 }
+		        diplomatic_influence = { who = CRO value = 400 }
+		        diplomatic_influence = { who = RUT value = 400 }
+		        diplomatic_influence = { who = SYL value = 400 }
+		        diplomatic_influence = { who = HUN value = 400 }
+                        end_war = AUS
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	end_austria2 = {
+                picture = austerlitz
+		potential = {
+			tag = FRE
+			has_country_flag = the_empire_reborn
+			NOT = { has_country_flag = end_austria }
+                        exists = DOW
+		}
+
+		allow = {
+			619 = { controlled_by = FRE }
+			625 = { controlled_by = FRE }
+			641 = { controlled_by = FRE }
+			AUS = {
+				all_core = {
+					OR = {
+						owned_by = FRE
+						controlled_by = FRE
+						NOT = { is_core = FRE }
+					}
+				}
+			}
+			NOT = {
+				any_owned_province = { controlled_by = AUS }
+				any_owned_province = {
+					controller = { alliance_with = AUS }
+				}
+			}
+		}
+
+		effect = {
+			set_country_flag = end_austria
+			KUK = { 
+                            release = CRO
+                            release = SYL
+                            release = BKV
+                            release = RUT
+                            release = DOW
+                            release = HUN
+                            release = BOH
+                            release = SLO
+                            release = SLV
+                            release = SER
+                        }
+		        diplomatic_influence = { who = BKV value = 400 }
+		        diplomatic_influence = { who = CRO value = 400 }
+		        diplomatic_influence = { who = RUT value = 400 }
+		        diplomatic_influence = { who = SYL value = 400 }
+		        diplomatic_influence = { who = HUN value = 400 }
+		        diplomatic_influence = { who = BOH value = 400 }
+		        diplomatic_influence = { who = SLO value = 400 }
+		        diplomatic_influence = { who = SLV value = 400 }
+                        end_war = KUK
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	end_prussia = {
+                picture = prussia
+		potential = {
+			tag = FRE
+			has_country_flag = the_empire_reborn
+			NOT = { has_country_flag = end_prussia }
+                        exists = DOW
+                        exists = CRH
+		}
+
+		allow = {
+			549 = { controlled_by = FRE }
+			690 = { controlled_by = FRE }
+			PRU = {
+				all_core = {
+					OR = {
+						owned_by = FRE
+						controlled_by = FRE
+						NOT = { is_core = FRE }
+					}
+				}
+			}
+			NOT = {
+				any_owned_province = { controlled_by = PRU }
+				any_owned_province = {
+					controller = { alliance_with = PRU }
+				}
+			}
+		}
+
+		effect = {
+			set_country_flag = end_prussia
+                        end_war = PRU
+			RUS_958 = { add_core = FRE }
+			PRU_695 = { add_core = FRE }
+                        PRU_696 = { add_core = FRE }
+			PRU = { 
+                            release = DOW
+                            release = FRE
+                            release = CRH
+                            all_core = { remove_core = PRU }
+                        }
+			RUS_958 = { add_core = PRU }
+			PRU_695 = { add_core = PRU }
+                        PRU_696 = { add_core = PRU }
+                        release_vassal = PRU
+                        PRU = { 
+                            all_core = { remove_core = FRE }
+                        }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	end_russia = {
+                picture = russia_campaign
+		potential = {
+			tag = FRE
+			has_country_flag = the_empire_reborn
+			NOT = { has_country_flag = end_russia }
+                        exists = DOW
+                        exists = CRH
+		}
+
+		allow = {
+			1008 = { controlled_by = FRE }
+			994 = { controlled_by = FRE }
+			958 = { controlled_by = FRE }
+			718 = { controlled_by = FRE }
+			1090 = { controlled_by = FRE }
+			343 = { controlled_by = FRE }
+			354 = { controlled_by = FRE }
+			RUS = {
+				all_core = {
+					OR = {
+						owned_by = FRE
+						controlled_by = FRE
+						NOT = { is_core = FRE }
+					}
+				}
+			}
+			NOT = {
+				any_owned_province = { controlled_by = RUS }
+				any_owned_province = {
+					controller = { alliance_with = RUS }
+				}
+			}
+		}
+
+		effect = {
+			set_country_flag = end_russia
+                        end_war = RUS
+			EST = {
+                            all_core = { add_core = UBD }
+                        }
+			LIT = {
+                            all_core = { add_core = UBD }
+                        }
+			LAT = {
+                            all_core = { add_core = UBD }
+                        }
+			ARM = {
+                            all_core = { add_core = GEO }
+                        }
+			AZB = {
+                            all_core = { add_core = GEO }
+                        }
+			RUS = { 
+                            release = UBD
+                            release = BYE
+                            release = UKR
+                            release = ARM
+                            release = AZB
+                            release = GEO
+                            release = ROM
+                            release_vassal = FIN
+                        }
+                        GEO = { 
+                            inherit = AZB
+                            inherit = ARM
+                            change_tag = TCA
+                        }
+                        ROM = { 
+                            inherit = WAL
+                            inherit = MOL
+                        }
+		        diplomatic_influence = { who = UKR value = 400 }
+		        diplomatic_influence = { who = BYE value = 400 }
+		        diplomatic_influence = { who = TCA value = 400 }
+		        diplomatic_influence = { who = ROM value = 400 }
+		        diplomatic_influence = { who = UBD value = 400 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	end_ottomans = {
+                picture = egypt_camp
+		potential = {
+			tag = FRE
+			has_country_flag = the_empire_reconquer
+			NOT = { has_country_flag = end_ottomans }
+		}
+
+		allow = {
+			860 = { controlled_by = FRE }
+			1745 = { controlled_by = FRE }
+			1751 = { controlled_by = FRE }
+			809 = { controlled_by = FRE }
+			849 = { controlled_by = FRE }
+			876 = { controlled_by = FRE }
+			917 = { controlled_by = FRE }
+			TUR = {
+				all_core = {
+					OR = {
+						owned_by = FRE
+						controlled_by = FRE
+						NOT = { is_core = FRE }
+					}
+				}
+			}
+			NOT = {
+				any_owned_province = { controlled_by = TUR }
+				any_owned_province = {
+					controller = { alliance_with = TUR }
+				}
+			}
+		}
+
+		effect = {
+			set_country_flag = end_ottomans
+                        end_war = TUR
+		        FRE = { country_event = 1800666 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	end_usa = {
+                picture = 1812_pic
+		potential = {
+			tag = FRE
+			has_country_flag = the_empire_reborn
+			NOT = { has_country_flag = end_usa }
+		}
+
+		allow = {
+			220 = { controlled_by = FRE }
+			223 = { controlled_by = FRE }
+			232 = { controlled_by = FRE }
+			USA = {
+				all_core = {
+					OR = {
+						owned_by = FRE
+						controlled_by = FRE
+						NOT = { is_core = FRE }
+					}
+				}
+			}
+			NOT = {
+				any_owned_province = { controlled_by = USA }
+				any_owned_province = {
+					controller = { alliance_with = USA }
+				}
+			}
+		}
+
+		effect = {
+			set_country_flag = end_usa
+                        end_war = USA
+		        FRE = { country_event = 18121212 }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

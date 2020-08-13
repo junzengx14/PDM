@@ -1,0 +1,13 @@
+owner = MOL
+controller = MOL
+add_core = MOL
+add_core = ROM
+add_core = RME
+trade_goods = fruit
+life_rating = 35
+terrain = forested_farmland
+
+1861.1.1 = {
+	controller = ROM
+	owner = ROM
+}

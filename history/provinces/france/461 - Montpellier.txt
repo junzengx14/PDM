@@ -1,0 +1,12 @@
+owner = FRA
+controller = FRA
+add_core = FRA
+add_core = OCC
+add_core = RME
+trade_goods = cattle
+life_rating = 32
+terrain = marginal_farmland
+1861.1.1 = { 
+	railroad = 3 
+	naval_base = 1
+}

@@ -1,0 +1,13 @@
+owner = PRG
+controller = PRG
+add_core = BRZ
+add_core = MTG
+add_core = MSS
+trade_goods = sulphur
+life_rating = 25
+terrain = dry_forest
+1825.1.1 = {
+	controller = BRZ
+	owner = BRZ
+	add_core = BRZ
+}

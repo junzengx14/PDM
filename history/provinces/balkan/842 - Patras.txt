@@ -1,0 +1,11 @@
+owner = TUR
+controller = TUR
+add_core = GRE
+add_core = RME
+trade_goods = wool
+life_rating = 35
+terrain = hilly_farmland
+1836.1.1 = {
+	controller = GRE 
+	owner = GRE
+}

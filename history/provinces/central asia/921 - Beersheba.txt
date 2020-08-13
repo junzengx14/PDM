@@ -1,0 +1,16 @@
+owner = TUR
+controller = TUR
+add_core = TUR
+add_core = RME
+add_core = PLS
+trade_goods = grain
+life_rating = 35
+terrain = desert_hills
+1836.1.1 = {
+	controller = EGY 
+	owner = EGY
+}
+1861.1.1 = {
+	controller = TUR 
+	owner = TUR
+}

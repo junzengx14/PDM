@@ -1,0 +1,12 @@
+owner = SPA
+controller = SPA
+add_core = BOL
+add_core = PRG
+trade_goods = tropical_wood
+life_rating = 30
+terrain = dry_forest
+colonial = 1
+1836.1.1 = {
+	controller = PRG
+	owner = PRG
+}

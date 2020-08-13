@@ -1,0 +1,2542 @@
+political_decisions = {
+	
+	provincia_cisplatina={
+		picture = banda_oriental
+		potential = {
+			primary_culture = brazilian
+			NOT = {
+				has_country_flag = cisplatina_is_ours
+                               exists = MAR
+                               exists = RIO
+                               exists = SAO
+                               exists = PNA
+                               exists = BRS                               
+                               exists = MSS
+                               exists = MTG
+                               exists = RGS
+                               exists = SCT
+                               exists = MGS
+                               exists = AMA
+                               exists = ACR
+                               exists = ROR
+                               exists = RON
+                               exists = GRP
+                               exists = PIA
+                               exists = CEQ
+                               exists = BAH
+                               exists = TOC
+                               exists = GOY
+                               exists = CEA
+                               exists = ESO 
+			}
+		}
+		
+		allow = {
+			romanticism = 1
+			is_greater_power = yes
+		}
+		
+		effect = {
+			set_country_flag = cisplatina_is_ours #Uruguay provinces
+			2344 = {
+				add_core = BRZ
+			}
+			2345 = {
+				add_core = BRZ
+			}
+			2346 = {
+				add_core = BRZ
+			}
+			2347 = {
+				add_core = BRZ
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	guiana_negotiations = {
+		picture = guyanas
+		potential = {
+                        primary_culture = brazilian
+			NOT = { has_country_flag = guiana_negotiations }
+		}
+		
+		allow = {
+			war = no
+			money = 1000000
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			FRA = {
+					war = no
+					relation = { who = THIS value = 75 }
+			}
+			ENG = {
+					war = no
+					relation = { who = THIS value = 75 }
+			}
+			NET = {
+					war = no
+					relation = { who = THIS value = 75 }
+			}
+		}
+		
+		effect = {
+			set_country_flag = guiana_purchase
+			FRA = { country_event = 224555 }
+			ENG = { country_event = 224555 }               
+			NET = { country_event = 224555 }
+                        THIS = { set_country_flag = guiana_negotiations }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	guiana_purchasebrz = {
+		picture = guyanas
+		potential = {
+                        primary_culture = brazilian
+			NOT = { has_country_flag = guiana_purchase }
+		}
+		
+		allow = {
+			war = no
+                        has_country_flag = guiana_negotiations
+			money = 1000000
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			NET_2240 = {
+                                 owner = {
+					war = no
+					relation = { who = THIS value = 75 }
+                                        has_country_flag = guyana_negotiations
+                                 }
+			}
+			ENG_1979 = {
+                                 owner = {
+					war = no
+					relation = { who = THIS value = 75 }
+                                        has_country_flag = guyana_negotiations
+                                 }
+                        }
+			FRA_2241 = {
+                                 owner = {
+					war = no
+					relation = { who = THIS value = 75 }
+                                        has_country_flag = guyana_negotiations
+                                 }
+			}
+		}
+		
+		effect = {
+			set_country_flag = guiana_purchase
+			FRA = {
+                                        release = GUY
+                                        money = +500000
+			}
+			ENG = {
+                                        release = GUY
+                                        money = +400000
+			}               
+			NET = {
+                                        release = GUY
+                                        money = +100000
+			}
+                        THIS = {
+                                        inherit = GUY
+                                        money = -1000000
+                        }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	guiana_purchasepba = {
+		picture = guyanas
+		potential = {
+                        tag = PBA
+			NOT = { has_country_flag = guiana_purchase }
+		}
+		
+		allow = {
+			war = no
+                        has_country_flag = guiana_negotiations
+			money = 1000000
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			FRA = {
+					war = no
+					relation = { who = THIS value = 75 }
+			}
+			ENG = {
+					war = no
+					relation = { who = THIS value = 75 }
+			}
+			NET = {
+					war = no
+					relation = { who = THIS value = 75 }
+			}
+		}
+		
+		effect = {
+			set_country_flag = guiana_purchase
+			FRA = {
+                                        release = GUY
+                                        money = +500000
+			}
+			ENG = {
+                                        release = GUY
+                                        money = +400000
+			}               
+			NET = {
+                                        release = GUY
+                                        money = +100000
+			}
+                        THIS = {
+                                        inherit = GUY
+                                        money = -1000000
+                                        GUY = {
+				             all_core = { add_core = THIS }
+			                }
+                        }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	buy_northernamazonas = {
+		picture = amazonia
+		potential = {
+                        tag = BRZ
+			NOT = { has_country_flag = northern_amazonas }
+		}
+		
+		allow = {
+                        has_country_flag = amazonia_is_ours
+			war = no
+			money = 100000
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			CLM = {
+			      owns = 3260		
+                              war = no
+			      relation = { who = THIS value = 75 }
+			}
+		}
+		
+		effect = {
+			set_country_flag = northern_amazonas
+                        CLM_3260 = { add_core = BRZ }
+			3260 = {
+				owner = { country_event = 187070 }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	buy_independence = {
+		picture = pedroi_pic
+		potential = {
+                        primary_culture = brazilian
+			NOT = { has_country_flag = buy_independence }
+			NOT = { year = 1825 }
+		}
+		
+		allow = {
+                        has_global_flag = the_empire
+			money = 10000
+		}
+		
+		effect = {
+			set_country_flag = buy_independence
+			POR = { country_event = 182555 }
+                }
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	claim_independence = {
+		picture = pedroi_pic
+		potential = {
+                        tag = BRZ
+			NOT = { has_country_flag = buy_independence }
+		}
+		
+		allow = {
+                        has_global_flag = the_empire
+			war = no
+                        truce_with = POR
+		}
+		
+		effect = {
+			set_country_flag = buy_independence
+                }
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	give_bolivia_to_brazil = {
+		picture = acrewar_pic
+		potential = {
+                        tag = SPA
+			NOT = { has_country_flag = give_bolivia }
+		}
+		
+		allow = {
+                        has_global_flag = dia_do_fico
+			owns = 2310
+		}
+		
+		effect = {
+			set_country_flag = give_bolivia
+                        PBA = { country_event = 182888 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	bolivia_agreement = {
+		picture = acrewar_pic
+		potential = {
+                        primary_culture = brazilian
+			NOT = { has_country_flag = bolivia_agreement }
+			NOT = { has_country_flag = acre_war }
+		}
+		
+		allow = {
+			war = no
+			money = 100000
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			BOL = {
+					war = no
+					relation = { who = THIS value = 75 }
+			}
+		}
+		
+		effect = {
+			3252 = { secede_province = THIS }
+			3251 = { secede_province = THIS }
+			2549 = { secede_province = THIS }
+			2549 = { secede_province = BOL }
+			BOL = {
+                                        release = MTG
+                                        money = +100000
+			}
+                        THIS = {
+                                        inherit = MTG
+                                        money = -100000
+                        }
+			set_country_flag = bolivia_agreement
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	petropolis_agreement = {
+		picture = acrewar_pic
+		potential = {
+                        primary_culture = brazilian
+			NOT = { has_country_flag = petropolis_agreement }
+			NOT = { has_country_flag = acre_war }
+		}
+		
+		allow = {
+			war = no
+			money = 100000
+                        has_country_flag = bolivia_agreement
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			BOL = {
+					war = no
+					relation = { who = THIS value = 100 }
+			}
+		}
+		
+		effect = {
+			3252 = { secede_province = BOL }
+			2549 = { secede_province = THIS }
+			3252 = { remove_core = THIS }
+			set_country_flag = petropolis_agreement
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	build_brasilia = {
+		picture = brasilia
+		potential = {
+                        primary_culture = brazilian
+			NOT = { has_country_flag = build_brasilia }
+		}
+		
+		allow = {
+			war = no
+			money = 100000000
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+		}
+		
+		effect = {
+                        capital = 3254
+                        money = -60000000
+			3254 = {
+				change_province_name = "Brasília"
+				state_scope = {
+					change_region_name = "Distrito Federal"
+				}
+                        }
+			set_country_flag = build_brasilia
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	provincia_cisplatina2={
+		picture = banda_oriental
+		potential = {
+			tag = BRS
+			NOT = {
+				has_country_flag = cisplatina_is_ours 
+			}
+		}
+		
+		allow = {
+			romanticism = 1
+			is_greater_power = yes
+		}
+		
+		effect = {
+			set_country_flag = cisplatina_is_ours #Uruguay provinces
+			2344 = {
+				add_core = BRS
+			}
+			2345 = {
+				add_core = BRS
+			}
+			2346 = {
+				add_core = BRS
+			}
+			2347 = {
+				add_core = BRS
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	rename_uruguay = {
+		picture = banda_oriental
+		potential = {
+			tag = BRZ
+			owns = 2344
+			owns = 2345
+			owns = 2346
+			owns = 2347
+			has_country_flag = cisplatina_is_ours
+			NOT = {
+				has_global_flag = brazil_has_renamed_cisplatina
+			}
+		}
+		
+		allow = {
+			owns = 2344
+		}
+		
+		effect = {
+			2344 = {
+				change_province_name = "Montevideu"
+				state_scope = {
+					change_region_name = "Cisplatina"
+				}
+			}
+			prestige = 5
+			set_global_flag = brazil_has_renamed_cisplatina
+		}
+	}
+
+	restore_uruguay = {
+		picture = banda_oriental
+		potential = {
+			OR = {
+				tag = URU
+				tag = ARG
+				tag = PRG
+				tag = LPL
+			}
+			has_global_flag = brazil_has_renamed_cisplatina
+			owns = 2344
+			owns = 2345
+			owns = 2346
+			owns = 2347
+		}
+		
+		allow = {
+			owns = 2344
+		}
+		
+		effect = {
+			2344 = {
+				change_province_name = "Montevideo"
+				state_scope = {
+					change_region_name = "Uruguay"
+				}
+			}
+			prestige = 5
+			BRZ = { prestige = -10 }
+			clr_global_flag = brazil_has_renamed_cisplatina
+		}
+	}
+
+	acre_war = {
+		picture = acrewar_pic
+		potential = {
+			primary_culture = brazilian
+			NOT = { has_country_flag = acre_war }
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+			OR = {
+				is_greater_power = yes
+				is_secondary_power = yes
+			}
+			prestige = 20
+                        owns = 2549
+		}
+		
+		effect = {
+			2549 = {
+				change_province_name = "Acre"
+			}
+			prestige = 5
+			badboy = -1
+			set_country_flag = acre_war
+		}
+	}
+ 
+	claim_amazonia = {
+		picture = amazonia
+		potential = {
+			primary_culture = brazilian
+			NOT = { has_country_flag = amazonia_is_ours }
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+			OR = {
+				is_greater_power = yes
+				is_secondary_power = yes
+			}
+			prestige = 20
+                        owns = 2401
+                        owns = 3256
+                        owns = 3255
+		}
+		
+		effect = {
+			BRZ = {
+				all_core = { remove_core = CLM }
+			}
+			prestige = 5
+			badboy = 4
+			set_country_flag = amazonia_is_ours
+		}
+	}
+
+	restore_empire = {
+                picture = second_reign_pic
+		potential = {
+			tag = HBE
+			NOT = {
+		         	government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+		}
+		allow = {
+			war = no
+		}
+		effect = {
+			government = absolute_monarchy
+                }
+	}
+
+	restore_america = {
+                picture = constitution
+		potential = {
+			primary_culture = brazilian
+			OR = {
+		         	government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			owns = 2344
+			owns = 2345
+			owns = 2346
+			owns = 2347
+		}
+		allow = {
+			war = no
+                        has_global_flag = continental_monarchy
+			PRG = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+							province_id = 2420
+						}
+					}
+				}
+			}
+			ARG = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+						}
+					}	
+				}
+			}
+			CHL = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+							province_id = 2131
+						}
+					}
+				}
+			}
+			BOL = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+							province_id = 2420
+						}
+					}
+				}
+			}
+			PEU = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+						}
+					}	
+				}
+			}
+			SPU = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+						}
+					}	
+				}
+			}
+			CLM = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+							province_id = 2131
+						}
+					}
+				}
+			}
+			ECU = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+							province_id = 2420
+						}
+					}
+				}
+			}
+			VNZ = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+						}
+					}	
+				}
+			}
+			GUA = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+							province_id = 2131
+						}
+					}
+				}
+			}
+			COS = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+							province_id = 2420
+						}
+					}
+				}
+			}
+			NIC = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+						}
+					}	
+				}
+			}
+			ELS = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+						}
+					}	
+				}
+			}
+			MEX = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+						}
+					}	
+				}
+			}
+			HON = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+						}
+					}	
+				}
+			}
+
+		}
+		effect = {
+                        set_global_flag = continental_monarchy_done
+			THIS = { country_event = 1850000 }
+                }
+	}
+
+	unite_south_america = {
+		picture = south_americapic
+		potential = {
+			primary_culture = brazilian
+                        has_global_flag = continental_monarchy_done
+			NOT = { 
+                                exists = SAE
+                                exists = LBE
+                                exists = HBE
+                                exists = LAE
+                                exists = PNM
+                                exists = URU
+                                exists = MAR
+                                exists = RIO
+                                exists = SAO
+                                exists = PNA
+                                exists = BRS                               
+                                exists = MSS
+                                exists = MTG
+                                exists = RGS
+                                exists = SCT
+                                exists = MGS
+                                exists = AMA
+                                exists = ACR
+                                exists = ROR
+                                exists = RON
+                                exists = GRP
+                                exists = PIA
+                                exists = CEQ
+                                exists = BAH
+                                exists = TOC
+                                exists = GOY
+                                exists = CEA
+                                exists = ESO
+                        }
+		}
+		
+		allow = {
+			war = no
+			prestige = 50
+			BRZ = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+							province_id = 2131
+						}
+					}
+				}
+			}
+			PRG = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+							province_id = 2420
+						}
+					}
+				}
+			}
+			URU = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+						}
+					}	
+				}
+			}
+			ARG = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+						}
+					}	
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			ARG = {
+				all_core = { add_core = SAE }
+			}
+			PRG = {
+				all_core = { add_core = SAE }
+			}
+			URU = {
+				all_core = { add_core = SAE }
+			}
+			BOL = {
+				all_core = { add_core = SAE }
+			}
+                        BRZ = {
+				all_core = { add_core = SAE }
+                        }
+                        CLM = {
+				all_core = { add_core = SAE }
+                        }
+                        CHL = {
+				all_core = { add_core = SAE }
+                        }
+                        PEU = {
+				all_core = { add_core = SAE }
+                        }
+                        VNZ = {
+				all_core = { add_core = SAE }
+                        }
+                        ECU = {
+				all_core = { add_core = SAE }
+                        }
+                        PNM = {
+				all_core = { add_core = SAE }
+                        }
+                        GUY = {
+				all_core = { add_core = SAE }
+                        }
+                        PTG = {
+				all_core = { add_core = SAE }
+                        }
+
+			change_tag = SAE
+			random_country = {
+				limit = {
+					tag = ARG
+					exists = yes
+					ai = yes
+				}
+				THIS = { inherit = ARG }
+			}
+                        random_country = {
+				limit = {
+					tag = BRZ
+					exists = yes
+					ai = no
+				}
+				country_event = 98650
+			}
+			random_country = {
+				limit = {
+					tag = ARG
+					exists = yes
+					ai = no
+				}
+				country_event = 98650
+			}
+			random_country = {
+				limit = {
+					tag = PRG
+					exists = yes
+					ai = yes
+				}
+				THIS = { inherit = PRG }
+			}
+			random_country = {
+				limit = {
+					tag = PRG
+					exists = yes
+					ai = no
+				}
+				country_event = 98650
+			}
+			random_country = {
+				limit = {
+					tag = URU
+					exists = yes
+					ai = yes
+				}
+				THIS = { inherit = URU }
+			}
+			random_country = {
+				limit = {
+					tag = URU
+					exists = yes
+					ai = no
+				}
+				country_event = 98650
+			}
+			any_country = {
+				limit = {
+					in_sphere = THIS
+					any_owned_province = { is_core = SAE }
+				}
+				any_owned = {
+					limit = { is_core = SAE }
+					secede_province = THIS
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	popeemperor = {
+		picture = papacy
+		potential = {
+			primary_culture = brazilian
+                        has_global_flag = continental_monarchy_done
+			NOT = { 
+                                exists = SAE
+                                exists = LBE
+                                exists = HBE
+                                exists = LAE
+                                exists = PNM
+                                exists = URU
+                                exists = MAR
+                                exists = RIO
+                                exists = SAO
+                                exists = PNA
+                                exists = BRS                               
+                                exists = MSS
+                                exists = MTG
+                                exists = RGS
+                                exists = SCT
+                                exists = MGS
+                                exists = AMA
+                                exists = ACR
+                                exists = ROR
+                                exists = RON
+                                exists = GRP
+                                exists = PIA
+                                exists = CEQ
+                                exists = BAH
+                                exists = TOC
+                                exists = GOY
+                                exists = CEA
+                                exists = ESO
+                        }
+		}
+		
+		allow = {
+			war = no
+			prestige = 50
+			ITA = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = { in_sphere = THIS }
+							province_id = 749
+						}
+					}
+				}
+			}
+                }
+
+		effect = {
+			prestige = 10
+			ITA = {
+				all_core = { add_core = THIS }
+			}
+			PAP = {
+				all_core = { add_core = THIS }
+			}
+			THIS = { inherit = PAP }
+		}
+	}
+
+	holy_empire = {
+		picture = papacy
+		potential = {
+			tag = KBR
+                        owns = 749
+			NOT = { has_country_flag = holy_empire }
+		}
+		
+		allow = {
+			is_greater_power = yes
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = -5
+			add_accepted_culture = yankee
+			add_accepted_culture = texan
+			add_accepted_culture = mexican
+			add_accepted_culture = central_american
+			add_accepted_culture = dixie
+			add_accepted_culture = caribeno
+			add_accepted_culture = afro_antillean
+			add_accepted_culture = afro_caribeno
+			TEX = {
+				all_core = { add_core = HBE }
+			}
+			DES = {
+				all_core = { add_core = HBE }
+			}
+			CAL = {
+				all_core = { add_core = HBE }
+			}
+                        GUA = {
+				all_core = { add_core = HBE }
+                        }
+                        MEX = {
+				all_core = { add_core = HBE }
+                        }
+			HON = {
+				all_core = { add_core = HBE }
+			}
+			ELS = {
+				all_core = { add_core = HBE }
+			}
+			NIC = {
+				all_core = { add_core = HBE }
+			}
+			COS = {
+				all_core = { add_core = HBE }
+			}
+			HAI = {
+				all_core = { add_core = HBE }
+			}
+			CUB = {
+				all_core = { add_core = HBE }
+			}
+			ARG = {
+				all_core = { add_core = HBE }
+			}
+			PRG = {
+				all_core = { add_core = HBE }
+			}
+			URU = {
+				all_core = { add_core = HBE }
+			}
+			BOL = {
+				all_core = { add_core = HBE }
+			}
+                        BRZ = {
+				all_core = { add_core = HBE }
+                        }
+                        CLM = {
+				all_core = { add_core = HBE }
+                        }
+                        CHL = {
+				all_core = { add_core = HBE }
+                        }
+                        PEU = {
+				all_core = { add_core = HBE }
+                        }
+                        VNZ = {
+				all_core = { add_core = HBE }
+                        }
+                        ECU = {
+				all_core = { add_core = HBE }
+                        }
+                        PNM = {
+				all_core = { add_core = HBE }
+                        }
+                        GUY = {
+				all_core = { add_core = HBE }
+                        }
+                        PTG = {
+				all_core = { add_core = HBE }
+                        }
+                        USA = {
+				all_core = { add_core = HBE }
+                        }
+                        CAN = {
+				all_core = { add_core = HBE }
+                        }
+                        LSK = {
+				all_core = { add_core = HBE }
+                        }
+                        GEL = {
+				all_core = { add_core = AFR }
+			}                        
+                        MAJ = {
+				all_core = { add_core = AFR }
+			}                        
+                        ETH = {
+				all_core = { add_core = AFR }
+			}                        
+                        ALD = {
+				all_core = { add_core = AFR }
+			}                        
+                        ARO = {
+				all_core = { add_core = AFR }
+			}                        
+                        OYO = {
+				all_core = { add_core = AFR }
+			}                        
+                        SOK = {
+				all_core = { add_core = AFR }
+			}                        
+                        ASH = {
+				all_core = { add_core = AFR }
+			}                        
+                        BEN = {
+				all_core = { add_core = AFR }
+			}                        
+                        CLA = {
+				all_core = { add_core = AFR }
+			}                        
+                        CYR = {
+				all_core = { add_core = AFR }
+			}                        
+                        DAH = {
+				all_core = { add_core = AFR }
+			}                        
+                        DND = {
+				all_core = { add_core = AFR }
+			}  
+                        JAL = {
+				all_core = { add_core = AFR }
+			}                        
+                        TOO = {
+				all_core = { add_core = AFR }
+			}                        
+                        GBU = {
+				all_core = { add_core = AFR }
+			}                        
+                        KON = {
+				all_core = { add_core = AFR }
+			}                        
+                        LIB = {
+				all_core = { add_core = AFR }
+			}                        
+                        LOA = {
+				all_core = { add_core = AFR }
+			}                        
+                        MAD = {
+				all_core = { add_core = AFR }
+			}                        
+                        MOR = {
+				all_core = { add_core = AFR }
+			}                        
+                        MAS = {
+				all_core = { add_core = AFR }
+			}                        
+                        TRI = {
+				all_core = { add_core = AFR }
+			}                        
+                        TUN = {
+				all_core = { add_core = AFR }
+			}  
+                        MOS = {
+				all_core = { add_core = AFR }
+			}                        
+                        SUA = {
+				all_core = { add_core = AFR }
+			}                        
+                        WRI = {
+				all_core = { add_core = AFR }
+			}                        
+                        SAF = {
+				all_core = { add_core = AFR }
+			}                        
+                        WOL = {
+				all_core = { add_core = AFR }
+			}                        
+                        XHO = {
+				all_core = { add_core = AFR }
+			}                        
+                        ZUL = {
+				all_core = { add_core = AFR }
+			}   
+                        ZAN = {
+				all_core = { add_core = AFR }
+			}  
+                        ENG_1848 = { 
+                                 add_core = AFR 
+			}  
+                        SOM_1868 = { 
+         			 add_core = AFR 
+			}  
+			SOM_1872 = { 
+                                 add_core = AFR 
+			}  
+			ENG_2024 = { 
+                                 add_core = AFR 
+			}  
+			ENG_2026 = { 
+                                 add_core = AFR 
+			}  
+			ENG_2036 = { 
+                                 add_core = AFR 
+			}  
+			ENG_2039 = { 
+                                 add_core = AFR 
+			}  
+			ENG_2044 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1775 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1780 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1783 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1788 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1798 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1801 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1803 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1883 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1884 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1878 = { 
+                                 add_core = AFR 
+			}  			
+			ENG_1887 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1892 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1893 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1901 = { 
+                                 add_core = AFR 
+			}   
+			ASH_1909 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1907 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1914 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1919 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1923 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1927 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1930 = { 
+                                 add_core = AFR 
+			}  
+			SPA_1955 = { 
+                                 add_core = AFR 
+			}  
+			ENG_1956 = { 
+                                 add_core = AFR 
+			}  
+			SOK_1963 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1965 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1970 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1972 = { 
+                                 add_core = AFR 
+			}  
+			BEL_1977 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1978 = { 
+                                 add_core = AFR 
+			}  
+			BEL_1984 = { 
+                                 add_core = AFR 
+			}  
+			BEL_1987 = { 
+                                 add_core = AFR 
+			}  
+			BEL_1992 = { 
+                                 add_core = AFR 
+			}  
+			BEL_1996 = { 
+                                 add_core = AFR 
+			}  
+			BEL_1990 = { 
+                                 add_core = AFR 
+			}  
+			ENG_2014 = { 
+                                 add_core = AFR 
+			}  
+			ENG_2016 = { 
+                                 add_core = AFR 
+			}  
+			ENG_2019 = { 
+                                 add_core = AFR 
+			}  
+			BEL_2034 = { 
+                                 add_core = AFR 
+			}  
+			POR_1999 = { 
+                                 add_core = AFR 
+			}  
+			POR_2003 = { 
+                                 add_core = AFR 
+			}  
+			POR_2006 = { 
+                                 add_core = AFR 
+			}  
+			POR_2049 = { 
+                                 add_core = AFR 
+			}  
+			POR_2053 = { 
+                                 add_core = AFR 
+			}  
+			POR_2054 = { 
+                                 add_core = AFR 
+			}  
+			POR_2060 = { 
+                                 add_core = AFR 
+			}  
+			ENG_2067 = { 
+                                 add_core = AFR 
+			}  
+			ENG_2068 = { 
+                                 add_core = AFR 
+			}  
+			ENG_2071 = { 
+                                 add_core = AFR 
+			}   
+			ENG_2074 = { 
+                                 add_core = AFR 
+			}  
+			ENG_2078 = { 
+                                 add_core = AFR 
+			}  
+			ENG_2083 = { 
+                                 add_core = AFR 
+			}  
+			ENG_2087 = { 
+                                 add_core = AFR 
+			}  
+			ENG_2092 = { 
+                                 add_core = AFR 
+			}  
+			ENG_2094 = { 
+                                 add_core = AFR 
+			}  
+			ENG_2096 = { 
+                                 add_core = AFR 
+			}  
+			ORA_2103 = { 
+                                 add_core = AFR 
+			}  
+			TRN_2108 = { 
+                                 add_core = AFR 
+			}  
+			ZUL_2113 = { 
+                                 add_core = AFR 
+			}  
+			MAD_2117 = { 
+                                 add_core = AFR 
+			}  
+			MAD_2121 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1700 = { 
+                                 add_core = AFR 
+			}  			
+			ALD_1704 = { 
+                                 add_core = AFR 
+			}  
+			ALD_1708 = {
+                                 add_core = AFR 
+			}  
+			ALD_1713 = { 
+                                 add_core = AFR 
+			}  
+			ALD_1714 = { 
+                                 add_core = AFR 
+			}  
+			ALD_1718 = { 
+                                 add_core = AFR 
+			}  
+			TUN_1726 = { 
+                                 add_core = AFR 
+			}  
+			TRI_1731 = { 
+                                 add_core = AFR 
+			}  
+			TRI_1735 = { 
+                                 add_core = AFR 
+			}  
+			TRI_1740 = { 
+                                 add_core = AFR 
+			}  
+			EGY_1745 = { 
+                                 add_core = AFR 
+			}  
+			EGY_1751 = { 
+                                 add_core = AFR 
+			}  
+			EGY_1753 = { 
+                                 add_core = AFR 
+			}  
+			EGY_1755 = { 
+                                 add_core = AFR 
+			}  
+			EGY_1758 = { 
+                                 add_core = AFR 
+			}  
+			EGY_1762 = { 
+                                 add_core = AFR 
+			}  
+			EGY_1771 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1808 = { 
+                                 add_core = AFR 
+			}  
+			FRA_1813 = { 
+                                 add_core = AFR 
+			}  
+			ENG_1818 = { 
+                                 add_core = AFR 
+			}  
+			ENG_1825 = { 
+                                 add_core = AFR 
+			}  
+			EGY_1827 = { 
+                                 add_core = AFR 
+			}  
+			EGY_1834 = { 
+                                 add_core = AFR 
+			}  
+			EGY_1838 = { 
+                                 add_core = AFR 
+			}  
+			EGY_1842 = { 
+                                 add_core = AFR 
+			}  
+			ENG_1844 = { 
+                                 add_core = AFR 
+			}  
+                        MOR_1696 = {
+                                 add_core = AFR 
+			}
+                        AFR = {
+				all_core = { add_core = HBE }
+                        }
+                        ENG_6 = {
+                                 add_core = HBE 
+			}
+                        ENG_9 = {
+                                 add_core = HBE 
+			}
+                        CAN_13 = {
+                                 add_core = HBE 
+			}
+                        CAN_19 = {
+                                 add_core = HBE 
+			}
+                        ENG_22 = {
+                                 add_core = HBE 
+			}
+                        ENG_30 = {
+                                 add_core = HBE 
+			}
+                        ENG_36 = {
+                                 add_core = HBE 
+			}
+                        CAN_46 = {
+                                 add_core = HBE 
+			}
+                        CAN_50 = {
+                                 add_core = HBE 
+			}
+                        CAN_58 = {
+                                 add_core = HBE 
+			}
+                        CAN_60 = {
+                                 add_core = HBE 
+			}
+                        ENG_68 = {
+                                 add_core = HBE 
+			}
+                        ENG_74 = {
+                                 add_core = HBE 
+			}
+			add_accepted_culture = akan
+			add_accepted_culture = bambara
+			add_accepted_culture = dyula
+			add_accepted_culture = edo
+			add_accepted_culture = african minor
+			add_accepted_culture = bakongo
+			add_accepted_culture = malagasy
+			add_accepted_culture = ewe
+			add_accepted_culture = fon
+			add_accepted_culture = fulbe
+			add_accepted_culture = hausa
+			add_accepted_culture = ibibio
+			add_accepted_culture = itsekari
+			add_accepted_culture = ibo
+			add_accepted_culture = kru
+			add_accepted_culture = mande
+			add_accepted_culture = mossi
+			add_accepted_culture = senufo
+			add_accepted_culture = songhai
+			add_accepted_culture = tiv
+			add_accepted_culture = tuareg
+			add_accepted_culture = wolof
+			add_accepted_culture = yoruba
+			add_accepted_culture = baguirmi
+			add_accepted_culture = lunda
+			add_accepted_culture = fang
+			add_accepted_culture = kanuri
+			add_accepted_culture = kuba
+			add_accepted_culture = luba
+			add_accepted_culture = mongo
+			add_accepted_culture = sara
+			add_accepted_culture = teda
+			add_accepted_culture = afar
+			add_accepted_culture = amhara
+			add_accepted_culture = tigray
+			add_accepted_culture = yoruba
+			add_accepted_culture = beja
+			add_accepted_culture = dinka
+			add_accepted_culture = baganda
+			add_accepted_culture = azande
+			add_accepted_culture = kikuyu
+			add_accepted_culture = luo
+			add_accepted_culture = fur
+			add_accepted_culture = khmer
+			add_accepted_culture = lao
+			add_accepted_culture = korean
+			add_accepted_culture = maasai
+			add_accepted_culture = kru
+			add_accepted_culture = nguni
+			add_accepted_culture = makua
+			add_accepted_culture = iomwe
+			add_accepted_culture = tigray
+			add_accepted_culture = khoisan
+			add_accepted_culture = herero
+			add_accepted_culture = chewa
+			add_accepted_culture = unyamwezi
+			add_accepted_culture = swahili
+			add_accepted_culture = sukuma
+			add_accepted_culture = somali
+			add_accepted_culture = sidama
+			add_accepted_culture = rundi
+			add_accepted_culture = ruanda
+			add_accepted_culture = nuer
+			add_accepted_culture = nuba
+			add_accepted_culture = oromo
+			add_accepted_culture = ovimbundu
+			add_accepted_culture = sena
+			add_accepted_culture = shona
+			add_accepted_culture = sotho
+			add_accepted_culture = tonga
+			add_accepted_culture = tswana
+			add_accepted_culture = xhosa
+			add_accepted_culture = yao
+			add_accepted_culture = zulu
+			add_accepted_culture = maghrebi
+			add_accepted_culture = misri
+			add_accepted_culture = mashriqi
+			add_accepted_culture = bedouin
+			add_accepted_culture = berber
+			add_accepted_culture = maurea
+			add_accepted_culture = sudanese
+			change_tag = HBE
+                        capital = 749               
+			set_country_flag = holy_empire
+		}
+	}
+	
+	american_expansion = {
+		picture = serpe_pic
+		potential = {
+			tag = SAE
+			NOT = { has_country_flag = south_american_expands }
+		}
+		
+		allow = {
+			is_greater_power = yes
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = -5
+			add_accepted_culture = yankee
+			add_accepted_culture = texan
+			add_accepted_culture = mexican
+			add_accepted_culture = central_american
+			add_accepted_culture = dixie
+			add_accepted_culture = caribeno
+			add_accepted_culture = afro_antillean
+			add_accepted_culture = afro_caribeno
+			TEX = {
+				all_core = { add_core = SAE }
+			}
+			DES = {
+				all_core = { add_core = SAE }
+			}
+			CAL = {
+				all_core = { add_core = SAE }
+			}
+                        GUA = {
+				all_core = { add_core = SAE }
+                        }
+                        MEX = {
+				all_core = { add_core = SAE }
+                        }
+			HON = {
+				all_core = { add_core = SAE }
+			}
+			ELS = {
+				all_core = { add_core = SAE }
+			}
+			NIC = {
+				all_core = { add_core = SAE }
+			}
+			COS = {
+				all_core = { add_core = SAE }
+			}
+			HAI = {
+				all_core = { add_core = SAE }
+			}
+			CUB = {
+				all_core = { add_core = SAE }
+			}
+			TEX = {
+				all_core = { add_core = MEX }
+			}
+			DES = {
+				all_core = { add_core = MEX }
+			}
+			CAL = {
+				all_core = { add_core = MEX }
+			}
+                        GUA = {
+				all_core = { add_core = MEX }
+                        }
+			HON = {
+				all_core = { add_core = MEX }
+			}
+			ELS = {
+				all_core = { add_core = MEX }
+			}
+			NIC = {
+				all_core = { add_core = MEX }
+			}
+			COS = {
+				all_core = { add_core = MEX }
+			}
+			HAI = {
+				all_core = { add_core = MEX }
+			}
+			CUB = {
+				all_core = { add_core = MEX }
+			}
+
+			set_country_flag = south_american_expands
+		}
+	}
+	
+	bolivar_project = {
+		picture = serpe_pic
+		potential = {
+			tag = SAE
+			has_country_flag = south_american_expands
+			NOT = { 
+                               exists = LBE
+                               exists = URU
+		}
+		
+		allow = {
+			war = no
+			prestige = 45
+                        owns = 2172
+		}
+		
+		effect = {
+                        change_tag = LAE
+			prestige = 40
+			badboy = -10
+		}
+	}
+
+	anex_paraguay = {
+                picture = bacia_do_prata_pic
+		potential = {
+			tag = LBE
+			NOT = { has_country_flag = paraguay_is_ours }
+		}
+		
+		allow = {
+			is_greater_power = yes
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = -5
+			set_country_flag = paraguay_is_ours                         
+			PRG_2343 = {
+                                 add_core = LBE
+			}
+                }
+        }
+
+	anex_paraguay2 = {
+                picture = bacia_do_prata_pic
+		potential = {
+			tag = BRZ
+			NOT = { has_country_flag = paraguay_is_ours }
+		}
+		
+		allow = {
+			is_greater_power = yes
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = -5
+			set_country_flag = paraguay_is_ours                         
+			PRG_2343 = {
+                                 add_core = BRZ
+			}
+                }
+        }
+
+	become_rio = {
+		picture = become_riopic
+		potential = {
+			tag = BRZ
+			NOT = {
+                                exists = RIO
+                                has_country_flag = brazil_is_unified
+                        }
+		} 
+
+		allow = {
+			war = no
+                        exists = SAO
+                        exists = MTG
+                        exists = GRP
+                        exists = BRS
+                        exists = CEQ
+                        exists = MAR
+                        exists = BAH
+                        exists = MGS
+	        }
+
+		effect = {
+			set_global_flag = the_empire_has_fallen
+			prestige = 10
+			all_core = { remove_core = BRZ }
+			change_tag = RIO
+			any_greater_power = {
+				diplomatic_influence = { who = THIS value = -200 }
+				leave_alliance = THIS
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	national_unity = {
+		picture = pedroi_pic
+		potential = {
+			primary_culture = brazilian
+                        has_country_flag = brazilian_unification
+			NOT = { 
+                               exists = MAR
+                               exists = RIO
+                               exists = SAO
+                               exists = PNA
+                               exists = BRS                               
+                               exists = MSS
+                               exists = MTG
+                               exists = RGS
+                               exists = SCT
+                               exists = MGS
+                               exists = AMA
+                               exists = ACR
+                               exists = ROR
+                               exists = RON
+                               exists = GRP
+                               exists = PIA
+                               exists = CEQ
+                               exists = BAH
+                               exists = TOC
+                               exists = GOY
+                               exists = CEA
+                               exists = ESO
+                               has_country_flag = brazil_is_unified
+                        }
+                }
+
+		allow = {
+			war = no
+			is_vassal = no
+                }
+ 		effect = {
+			prestige = 20
+			badboy = -5
+                        set_country_flag = brazil_is_unified
+                }
+        }
+ 
+	unite_lusitania = {
+		picture = lusitan_union_pic
+		potential = {
+			primary_culture = brazilian
+			NOT = { 
+                               has_country_flag = brazil_portugal 
+                               exists = SAE
+                               exists = URU
+                               exists = MAR
+                               exists = RIO
+                               exists = SAO
+                               exists = PNA
+                               exists = BRS                               
+                               exists = MSS
+                               exists = MTG
+                               exists = RGS
+                               exists = SCT
+                               exists = MGS
+                               exists = AMA
+                               exists = ACR
+                               exists = ROR
+                               exists = RON
+                               exists = GRP
+                               exists = PIA
+                               exists = CEQ
+                               exists = BAH
+                               exists = TOC
+                               exists = GOY
+                               exists = CEA
+                               exists = ESO
+                        }
+		}
+		
+		allow = {
+			war = no
+			state_n_government = 1
+			is_vassal = no
+                        owns = 2241
+                        owns = 2239
+			OR = {
+				is_greater_power = yes
+			}
+			prestige = 45
+                        has_country_flag = guiana_purchase
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = -5
+			POR = {
+				all_core = { add_core = THIS }
+			}
+			set_country_flag = brazil_portugal
+		}
+	}
+
+	form_luso_brazilian_empire = {
+		picture = lusitan_union_pic
+		potential = {
+			primary_culture = brazilian
+			has_country_flag = brazil_portugal
+			NOT = { 
+                               exists = SAE
+                               exists = GUY
+                               exists = URU
+                               exists = MAR
+                               exists = RIO
+                               exists = SAO
+                               exists = PNA
+                               exists = BRS                               
+                               exists = MSS
+                               exists = MTG
+                               exists = RGS
+                               exists = SCT
+                               exists = MGS
+                               exists = AMA
+                               exists = ACR
+                               exists = ROR
+                               exists = RON
+                               exists = GRP
+                               exists = PIA
+                               exists = CEQ
+                               exists = BAH
+                               exists = TOC
+                               exists = GOY
+                               exists = CEA
+                               exists = ESO
+		}
+		
+		allow = {
+			war = no
+			prestige = 45
+			all_core = { owned_by = THIS }
+		}
+		
+		effect = {
+                        change_tag = LBE
+			prestige = 40
+			badboy = -10
+		}
+	}
+
+	angola_e_nossa = {
+		picture = rhodesia_charter
+		potential = {
+			tag = LBE
+			NOT = { has_country_flag = angola_e_nossa }
+		}
+		
+		allow = {
+			is_greater_power = yes
+			mass_politics = 1
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = -5
+			add_accepted_culture = bakongo
+			add_accepted_culture = ovimbundu
+			add_accepted_culture = lunda
+			add_accepted_culture = nguni
+			add_accepted_culture = sena
+			add_accepted_culture = shona
+			add_accepted_culture = swahili
+			ANG = {
+				all_core = { add_core = LBE }
+			}
+			MOZ = {
+				all_core = { add_core = LBE }
+			}
+
+			set_country_flag = angola_e_nossa
+		}
+	}
+	
+	portuguese_africa = {
+		picture = rhodesia_charter
+		potential = {
+			tag = LBE
+			NOT = { has_country_flag = africa_e_nossa }
+		}
+		
+		allow = {
+			is_greater_power = yes
+			mass_politics = 1
+                        owns = 1926
+                        owns = 1928
+                        owns = 1934
+                        owns = 1935
+                        owns = 1931
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = -5
+			add_accepted_culture = yoruba
+			add_accepted_culture = african_minor
+			add_accepted_culture = itsekari
+			add_accepted_culture = ibibio
+			add_accepted_culture = edo
+			add_accepted_culture = ibo
+			add_accepted_culture = fulbe
+			add_accepted_culture = hausa
+			add_accepted_culture = tiv
+			add_accepted_culture = fang
+			OYO = {
+				all_core = { add_core = LBE }
+			}
+			BEN = {
+				all_core = { add_core = LBE }
+			}
+			CLA = {
+				all_core = { add_core = LBE }
+			}
+			SOK = {
+				all_core = { add_core = LBE }
+			}
+			ARO = {
+				all_core = { add_core = LBE }
+			}
+			CMR = {
+				all_core = { add_core = LBE }
+			}
+
+			set_country_flag = africa_e_nossa
+		}
+	}
+	
+	portuguese_project = {
+		picture = rhodesia_charter
+		potential = {
+			tag = LBE
+			NOT = { has_country_flag = portuguese_america }
+			NOT = { has_country_flag = emperor_pedro }
+		}
+		
+		allow = {
+			is_greater_power = yes
+			revolution_n_counterrevolution = 1
+			owns = 2344
+			owns = 2345
+			owns = 2346
+			owns = 2347
+			owns = 2338
+			owns = 2337
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = -5
+
+			TEX = {
+				all_core = { add_core = LBE }
+			}
+			DES = {
+				all_core = { add_core = LBE }
+			}
+			CAL = {
+				all_core = { add_core = LBE }
+			}
+                        GUA = {
+				all_core = { add_core = LBE }
+                        }
+                        MEX = {
+				all_core = { add_core = LBE }
+                        }
+			HON = {
+				all_core = { add_core = LBE }
+			}
+			ELS = {
+				all_core = { add_core = LBE }
+			}
+			NIC = {
+				all_core = { add_core = LBE }
+			}
+			COS = {
+				all_core = { add_core = LBE }
+			}
+			ARG = {
+				all_core = { add_core = LBE }
+			}
+			PRG = {
+				all_core = { add_core = LBE }
+			}
+			URU = {
+				all_core = { add_core = LBE }
+			}
+			BOL = {
+				all_core = { add_core = LBE }
+			}
+                        BRZ = {
+				all_core = { add_core = LBE }
+                        }
+                        CLM = {
+				all_core = { add_core = LBE }
+                        }
+                        CHL = {
+				all_core = { add_core = LBE }
+                        }
+                        PEU = {
+				all_core = { add_core = LBE }
+                        }
+                        VNZ = {
+				all_core = { add_core = LBE }
+                        }
+                        ECU = {
+				all_core = { add_core = LBE }
+                        }
+                        PNM = {
+				all_core = { add_core = LBE }
+                        }
+                        GUY = {
+				all_core = { add_core = LBE }
+                        }
+                        PTG = {
+				all_core = { add_core = LBE }
+                        }
+			TEX = {
+				all_core = { add_core = MEX }
+			}
+			DES = {
+				all_core = { add_core = MEX }
+			}
+			CAL = {
+				all_core = { add_core = MEX }
+			}
+                        GUA = {
+				all_core = { add_core = MEX }
+                        }
+			HON = {
+				all_core = { add_core = MEX }
+			}
+			ELS = {
+				all_core = { add_core = MEX }
+			}
+			NIC = {
+				all_core = { add_core = MEX }
+			}
+			COS = {
+				all_core = { add_core = MEX }
+			}
+			HAI = {
+				all_core = { add_core = MEX }
+			}
+			CUB = {
+				all_core = { add_core = MEX }
+			}
+
+			set_country_flag = portuguese_america
+		}
+	}
+	
+	anex_spain = {
+                picture = serpe_pic
+		potential = {
+			tag = LBE
+			NOT = { has_country_flag = iberia_is_ours }
+		}
+		
+		allow = {
+                        has_country_flag = portuguese_america
+			is_greater_power = yes
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = -5
+			set_country_flag = iberia_is_ours                         
+                        SPA = {
+				all_core = { add_core = LBE }
+                        }
+                        SPC = {
+				all_core = { add_core = LBE }
+                        }
+                        CUB = {
+				all_core = { add_core = LBE }
+                        }
+                }
+        }
+
+	reclaim_india = {
+                picture = map_india
+		potential = {
+			tag = LBE
+			NOT = { has_country_flag = india_is_ours }
+			NOT = { has_country_flag = portuguese_america }
+		}
+		
+		allow = {
+                        has_country_flag = emperor_pedro
+                        has_country_flag = guiana_purchase
+			is_greater_power = yes
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = 5
+			set_country_flag = india_is_ours                         
+                        HND = {
+				all_core = { add_core = LBE }
+                        }
+                        SIA = {
+				all_core = { add_core = LBE }
+                        }
+                        BUR = {
+				all_core = { add_core = LBE }
+                        }
+                        DAI = {
+				all_core = { add_core = LBE }
+                        }
+                        LUA = {
+				all_core = { add_core = LBE }
+                        }
+                        CAM = {
+				all_core = { add_core = LBE }
+                        }
+                        JOH = {
+				all_core = { add_core = LBE }
+                        }
+                        NEP = {
+				all_core = { add_core = LBE }
+                        }
+                        BHU = {
+				all_core = { add_core = LBE }
+                        }
+                        SRI = {
+				all_core = { add_core = LBE }
+                        }
+                        1593 = {
+				add_core = LBE
+			}
+			1325 = {
+				add_core = LBE
+			}
+			add_accepted_culture = marathi
+			add_accepted_culture = rajput
+			add_accepted_culture = bihari
+			add_accepted_culture = bengali
+			add_accepted_culture = kanauji
+			add_accepted_culture = panjabi
+                }
+        }
+
+	reclaim_india2 = {
+                picture = map_india
+		potential = {
+			tag = PBA
+			NOT = { has_country_flag = india_is_ours }
+			NOT = { has_country_flag = portuguese_america }
+		}
+		
+		allow = {
+                        has_country_flag = emperor_pedro
+			is_greater_power = yes
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = 5
+			set_country_flag = india_is_ours                         
+                        HND = {
+				all_core = { add_core = PBA }
+                        }
+                        SIA = {
+				all_core = { add_core = PBA }
+                        }
+                        BUR = {
+				all_core = { add_core = PBA }
+                        }
+                        DAI = {
+				all_core = { add_core = PBA }
+                        }
+                        LUA = {
+				all_core = { add_core = PBA }
+                        }
+                        CAM = {
+				all_core = { add_core = PBA }
+                        }
+                        JOH = {
+				all_core = { add_core = PBA }
+                        }
+                        NEP = {
+				all_core = { add_core = PBA }
+                        }
+                        BHU = {
+				all_core = { add_core = PBA }
+                        }
+                        SRI = {
+				all_core = { add_core = PBA }
+                        }
+                        1593 = {
+				add_core = PBA
+			}
+			1325 = {
+				add_core = PBA
+			}
+			add_accepted_culture = marathi
+			add_accepted_culture = rajput
+			add_accepted_culture = bihari
+			add_accepted_culture = bengali
+			add_accepted_culture = kanauji
+			add_accepted_culture = panjabi
+                }
+        }
+
+	rio_da_prata={
+		picture = rhodesia_charter
+		potential = {
+			tag = BRS
+			NOT = {
+				has_country_flag = prata_is_ours 
+			}
+		}
+		
+		allow = {
+			has_country_flag = cisplatina_is_ours
+			is_greater_power = yes
+		}
+		
+		effect = {
+			set_country_flag = prata_is_ours 
+			2554 = { #posadas
+				add_core = BRS
+			}
+			2358= { #santo tomas
+				add_core = BRS
+			}
+			2357 = { #curuzu
+				add_core = BRS
+			}
+			2356 = { #corrientes
+				add_core = BRS
+			}
+			2359 = { #colon
+				add_core = BRS
+			}
+			2360 = { #parana
+				add_core = BRS
+		        }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+
+	rio_da_prata2={
+		picture = rhodesia_charter
+		potential = {
+			tag = BRZ
+			NOT = {
+				has_country_flag = prata_is_ours 
+			}
+		}
+		
+		allow = {
+			has_country_flag = cisplatina_is_ours
+			nationalism_n_imperialism = 1
+			is_greater_power = yes
+		}
+		
+		effect = {
+			set_country_flag = prata_is_ours 
+			2554 = { #posadas
+				add_core = BRZ
+			}
+			2358= { #santo tomas
+				add_core = BRZ
+			}
+			2357 = { #curuzu
+				add_core = BRZ
+			}
+			2356 = { #corrientes
+				add_core = BRZ
+			}
+			2359 = { #colon
+				add_core = BRZ
+			}
+			2360 = { #parana
+				add_core = BRZ
+		        }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	rio_da_prata3={
+		picture = rhodesia_charter
+		potential = {
+			tag = LBE
+			NOT = {
+				has_country_flag = prata_is_ours 
+			}
+		}
+		
+		allow = {
+			nationalism_n_imperialism = 1
+			is_greater_power = yes
+		}
+		
+		effect = {
+			set_country_flag = prata_is_ours 
+			2554 = { #posadas
+				add_core = LBE
+			}
+			2358= { #santo tomas
+				add_core = LBE
+			}
+			2357 = { #curuzu
+				add_core = LBE
+			}
+			2356 = { #corrientes
+				add_core = LBE
+			}
+			2359 = { #colon
+				add_core = LBE
+			}
+			2360 = { #parana
+				add_core = LBE
+		        }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+
+}

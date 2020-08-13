@@ -1,0 +1,151 @@
+capital = 223
+primary_culture = yankee
+culture = dixie
+culture = native_american_minor
+culture = dakota
+culture = texan
+culture = anglo_canadian
+culture = french_canadian
+culture = cree
+culture = metis
+culture = mexican
+culture = central_american
+culture = north_andean
+culture = quechua
+culture = brazilian
+culture = platinean
+culture = south_andean
+culture = aimara
+culture = patagonian
+culture = irish
+culture = swedish
+culture = norwegian
+culture = dutch
+culture = flemish
+culture = wallonian
+culture = oruja
+culture = behari
+culture = bengali
+culture = assamese
+culture = kachin
+culture = shan
+culture = burmese
+culture = kanauji
+culture = telegu
+culture = marathi
+culture = kannada
+culture = tamil
+culture = sinhala
+culture = malayalan
+culture = guajarati
+culture = sindi
+culture = baluchi
+culture = pashtun
+culture = panjabi
+culture = hazara
+culture = japanese
+religion = protestant
+government = democracy
+plurality = 15.0
+nationalvalue = nv_might
+literacy = 0.55
+non_state_culture_literacy = 0.2
+civilized = yes
+
+set_country_flag = existing_country
+#GreaterPowers = prestige
+prestige = 50
+
+# Political reforms
+slavery = yes_slavery
+upper_house_composition = appointed
+vote_franschise = none_voting
+public_meetings = no_meeting
+press_rights = state_press
+trade_unions = no_trade_unions
+voting_system = first_past_the_post
+political_parties = underground_parties
+minorities_reform = oppression
+immigration_policy = nobody_gets_out
+conscription=four_year_draft
+
+set_country_flag = serfdom_not_abolished
+
+# Social Reforms
+wage_reform = no_minimum_wage
+work_hours = no_work_hour_limit
+safety_regulations = no_safety
+health_care = no_health_care
+unemployment_subsidies = no_subsidies
+pensions = no_pensions
+pollution=no_controls
+child_labor = child_labor_legal
+arts_endowment=no_endowment
+education = elite
+
+ruling_party = BRI_reactionary
+set_country_flag = tory_election_win
+last_election = 1828.12.3
+upper_house = {
+	fascist = 0
+	liberal = 5
+	conservative = 70
+	reactionary = 25
+	anarcho_liberal = 0
+	socialist = 0
+	communist = 0
+}
+
+# Technologies
+post_napoleonic_thought = 1
+flintlock_rifles = 1
+bronze_muzzle_loaded_artillery = 1
+muzzle_loaded_rifles = 1
+iron_muzzle_loaded_artillery = 1
+military_staff_system = 1
+army_command_principle = 1
+post_nelsonian_thought = 1
+clipper_design = 1
+naval_design_bureaus = 1
+alphabetic_flag_signaling = 1
+the_command_principle = 1
+classicism_n_early_romanticism = 1
+late_enlightenment_philosophy = 1
+malthusian_thought = 1
+enlightenment_thought = 1
+introspectionism = 1
+private_banks = 1
+no_standard = 1
+ad_hoc_money_bill_printing = 1
+early_classical_theory_and_critique = 1
+freedom_of_trade = 1
+guild_based_production = 1
+water_wheel_power = 1
+publishing_industry = 1
+mechanized_mining = 1
+basic_chemistry = 1
+battleship_column_doctrine = 1
+steamers = 1
+practical_steam_engine = 1
+experimental_railroad = 1
+stock_exchange = 1
+
+#Inventions
+#corvettes = yes
+authoritarianism = yes
+hierarchical_order = yes
+traditionalism = yes
+political_religion = yes
+paternalism = yes
+precision_work = yes
+
+
+# Starting Consciousness
+consciousness = 2
+nonstate_consciousness = 1
+
+schools = army_tech_school
+
+oob = "BRI_oob.txt"
+
+

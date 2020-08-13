@@ -1,0 +1,7 @@
+owner = AUS
+controller = AUS
+add_core = AUS
+add_core = RME
+trade_goods = timber
+life_rating = 31
+terrain = conifer_forest_mountains

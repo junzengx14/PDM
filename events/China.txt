@@ -1,0 +1,356 @@
+country_event = {
+	title = "EVTNAME90900"
+	desc = "EVTDESC90900"
+	picture = "Celebration"
+
+	id = 90900
+	news = yes
+	news_desc_long = "EVTDESC90900_NEWS_LONG"
+	news_desc_medium = "EVTDESC90900_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC90900_NEWS_SHORT"
+
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			tag = CHI
+			tag = TPG
+			tag = QNG
+		}
+		NOT = { has_global_flag = the_dragon_wakes }
+	}
+
+	option = {				
+		name = "EVTOPTA90900"
+		set_global_flag = the_dragon_wakes
+		any_country = {
+			limit = {
+				NOT = { tag = THIS 	}
+
+
+
+				substate_of = CHI
+				num_of_cities = 1
+			}
+			country_event = { id=90901 days=0 }
+		}
+		prestige = 10
+		remove_country_modifier = educational_reform
+		remove_country_modifier = military_reform
+		remove_country_modifier = western_influences
+		remove_country_modifier = uncivilized_isolationism
+		remove_country_modifier = trade_restrictions
+		remove_country_modifier = sayings_of_the_dutch
+		remove_country_modifier = meiji_restoration_boost
+		any_owned = {
+			remove_province_modifier = western_presence
+			remove_province_modifier = foreign_smugglers
+			remove_province_modifier = foreign_trading_post
+			remove_province_modifier = local_opium_habit
+			remove_province_modifier = european_military_mission
+			remove_province_modifier = legation_quarter
+			remove_province_modifier = kettler_denkmal
+			remove_province_modifier = extraterritoriality_granted
+			remove_province_modifier = boxer_presence
+			remove_province_modifier = boxer_agitation
+		}
+
+	}
+}
+
+# Event to Inherit
+country_event = {
+	id = 90901
+	title = "EVTNAME90900"
+	desc = "EVTDESC90901"
+	picture = "Celebration"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA90901"
+		civilized = yes
+		FROM = {
+			inherit = THIS
+		}
+		ai_chance = {
+			factor = 10
+			 modifier = {
+				factor = 1000
+				relation = { who = FROM value = 100 }
+			} 
+		}
+	}
+
+	option = {
+		name = "EVTOPTB90100"
+		ai_chance = {
+			factor = 100
+		}
+		prestige = 10
+		relation = {
+			who = FROM
+			value = -200
+		}
+		civilized = yes
+		release_vassal = THIS
+		leave_alliance = CHI
+	}
+}
+
+# Event to reject
+country_event = {
+	id = 90902
+	news = yes
+	news_desc_long = "EVTDESC90902_NEWS_LONG"
+	news_desc_medium = "EVTDESC90902_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC90902_NEWS_SHORT"
+
+	title = "EVTNAME90902"
+	desc = "EVTDESC90902"
+	picture = "Celebration"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA90902"
+		release_vassal = THIS
+		leave_alliance = CHI
+		civilized = yes
+	}
+}
+
+country_event = {
+	title = "westernize_nation_title"
+	desc = "westernize_nation_desc"
+	picture = "Celebration"
+
+	id = 90903
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_global_flag = the_dragon_wakes }
+		OR = { 
+		tag = GXI
+		tag = MCK
+		tag = XIN
+		tag = YNN
+		tag = XBI
+		tag = MGL
+		}
+		}
+
+	option = {				
+		name = "EVTOPTA90902"
+		set_global_flag = the_dragon_wakes
+		release_vassal = THIS
+		leave_alliance = CHI
+		any_country = {
+			limit = {
+				NOT = {
+					tag = THIS
+				}
+				substate_of = CHI
+				num_of_cities = 1
+			}
+			country_event = { id=90902 days=0 }
+		}
+		CHI = {
+			country_event = { id=90904 days=0 }
+		}
+		prestige = 10
+		remove_country_modifier = educational_reform
+		remove_country_modifier = military_reform
+		remove_country_modifier = western_influences
+		remove_country_modifier = uncivilized_isolationism
+		remove_country_modifier = trade_restrictions
+		remove_country_modifier = sayings_of_the_dutch
+		remove_country_modifier = meiji_restoration_boost
+		any_owned = {
+			remove_province_modifier = western_presence
+			remove_province_modifier = foreign_smugglers
+			remove_province_modifier = foreign_trading_post
+			remove_province_modifier = local_opium_habit
+			remove_province_modifier = european_military_mission
+			remove_province_modifier = legation_quarter
+			remove_province_modifier = kettler_denkmal
+			remove_province_modifier = extraterritoriality_granted
+		}
+
+	}
+}
+
+country_event = {
+	id = 19122
+	title = "The Chinese Empire"
+	desc = "EVTDESC19122"
+        picture = "imperiochines"
+
+	trigger = {
+		tag = QNG
+		year = 1815
+                NOT = { 
+                    has_global_flag = the_empire_of_heaven
+                }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+	option = {
+		name = "I want no challenges"
+		QNG = { civilized = yes }
+                inherit = MGL
+                inherit = TIB
+                set_global_flag = the_empire_of_heaven	
+		ai_chance = {
+                        factor = 0
+		}	
+                
+	}
+	option = {
+		name = "A New Empire"
+		CHI = { civilized = yes }
+		change_tag = CHI
+                inherit = MGL
+                inherit = TIB
+			add_accepted_culture = nanfaren
+			add_accepted_culture = manchu
+			add_accepted_culture = yue
+			add_accepted_culture = min
+			add_accepted_culture = tibetan
+			add_accepted_culture = japanese
+			add_accepted_culture = uighur
+			add_accepted_culture = mongol
+			add_accepted_culture = hakka
+			add_accepted_culture = korean
+                set_global_flag = the_empire_of_heaven	
+		ai_chance = {
+                        factor = 0
+		}	
+                
+	}
+	option = {
+		name = "Keep the Qing"
+                inherit = MGL
+                inherit = TIB
+                set_global_flag = the_empire_of_heaven	
+      		ai_chance = {
+			factor = 100
+		}	
+
+	}
+	option = {
+		name = "The Ming Dynasty"
+		CHI = {
+			all_core = { add_core = MIN }
+		}
+		change_tag = MIN
+                inherit = MGL
+                inherit = TIB
+			add_accepted_culture = nanfaren
+			add_accepted_culture = manchu
+			add_accepted_culture = yue
+			add_accepted_culture = min
+			add_accepted_culture = tibetan
+			add_accepted_culture = japanese
+			add_accepted_culture = uighur
+			add_accepted_culture = mongol
+			add_accepted_culture = hakka
+			add_accepted_culture = korean
+                set_global_flag = the_empire_of_heaven	
+		ai_chance = {
+                        factor = 0
+		}	
+                
+	}
+	option = {
+		name = "The Yuan Dynasty"
+		CHI = {
+			all_core = { add_core = YAN }
+		}
+		change_tag = YAN
+                inherit = MGL
+                inherit = TIB
+			add_accepted_culture = nanfaren
+			add_accepted_culture = manchu
+			add_accepted_culture = yue
+			add_accepted_culture = min
+			add_accepted_culture = tibetan
+			add_accepted_culture = japanese
+			add_accepted_culture = uighur
+			add_accepted_culture = mongol
+			add_accepted_culture = hakka
+			add_accepted_culture = korean
+                set_global_flag = the_empire_of_heaven	
+		ai_chance = {
+                        factor = 0
+		}	
+                
+	}
+	option = {
+		name = "The Han Dynasty"
+		CHI = {
+			all_core = { add_core = HNC }
+		}
+                inherit = MGL
+                inherit = TIB
+			add_accepted_culture = nanfaren
+			add_accepted_culture = manchu
+			add_accepted_culture = yue
+			add_accepted_culture = min
+			add_accepted_culture = tibetan
+			add_accepted_culture = japanese
+			add_accepted_culture = uighur
+			add_accepted_culture = mongol
+			add_accepted_culture = hakka
+			add_accepted_culture = korean
+		change_tag = HNC
+                set_global_flag = the_empire_of_heaven	
+      		ai_chance = {
+			factor = 0
+		}	
+
+	}
+	option = {
+		name = "The Tang Dynasty"
+		CHI = {
+			all_core = { add_core = TNG }
+		}
+		change_tag = TNG
+                inherit = MGL
+                inherit = TIB
+			add_accepted_culture = nanfaren
+			add_accepted_culture = manchu
+			add_accepted_culture = yue
+			add_accepted_culture = min
+			add_accepted_culture = tibetan
+			add_accepted_culture = japanese
+			add_accepted_culture = uighur
+			add_accepted_culture = mongol
+			add_accepted_culture = hakka
+			add_accepted_culture = korean
+                set_global_flag = the_empire_of_heaven	
+      		ai_chance = {
+			factor = 0
+		}	
+
+	}
+}
+
+country_event = {
+	id = 90904
+	title = "EVTNAME90902"
+	desc = "EVTDESC90902"
+	picture = "Celebration"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA90904"
+		civilized = yes
+	}
+}
