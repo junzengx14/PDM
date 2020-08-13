@@ -1,7 +1,7 @@
 owner = ALD
 controller = ALD
 add_core = ALD
-add_core = RME
+# add_core = RME
 trade_goods = wool
 life_rating = 35
 terrain = mountain_grassland

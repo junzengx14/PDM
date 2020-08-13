@@ -1,6 +1,6 @@
 owner = TUN
 controller = TUN
-add_core = RME
+# add_core = RME
 add_core = TUN
 terrain = marginal_farmland
 trade_goods = lead

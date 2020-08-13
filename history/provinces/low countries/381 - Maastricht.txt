@@ -6,7 +6,7 @@ add_core = NET
 
 add_core = BEL
 
-add_core = RME
+# add_core = RME
 trade_goods = coal
 
 life_rating = 35

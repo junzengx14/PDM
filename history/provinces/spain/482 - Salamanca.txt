@@ -1,6 +1,6 @@
 owner = SPA
 controller = SPA
-add_core = RME
+# add_core = RME
 add_core = SPA
 trade_goods = lead
 life_rating = 35

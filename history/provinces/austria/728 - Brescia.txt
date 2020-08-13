@@ -3,7 +3,7 @@ controller = AUS
 
 add_core = LOM
 add_core = ITA
-add_core = RME
+# add_core = RME
 trade_goods = silk
 life_rating = 40
 terrain = floodplain_farmland
