@@ -4,6 +4,6 @@ add_core = FRA
 add_core = OCC
 # add_core = RME
 trade_goods = sulphur
-life_rating = 32
+life_rating = 35
 terrain = hilly_farmland
 1861.1.1 = { railroad = 3 }
