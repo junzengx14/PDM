@@ -632,7 +632,7 @@ emigration_chance =
 			strata = rich
 		}
 	modifier = {
-		factor = -5.0
+		factor = -0.5
 		OR = { 
 			continent = north_america
 			continent = south_america
@@ -888,7 +888,7 @@ assimilation_chance =
 		}
 	}
 	modifier = {
-		factor = -1
+		factor = 1
 		OR = { 
 			continent = europe
 			continent = asia

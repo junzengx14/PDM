@@ -17,7 +17,7 @@ province_event = {
 			province_id = 1390			# Kuantan
 			province_id = 1422			# Muraleve
 			province_id = 1440			# Sumbawa
-			province_id = 1564			# Caozhou
+			# province_id = 1564			# Caozhou
 			province_id = 1884			# Freetown
 			province_id = 2094			# Kimberley
 			province_id = 2153			# Durango
@@ -30,7 +30,7 @@ province_event = {
 			province_id = 2575			# Ipoh
 			province_id = 2601			# Sandy Desert
 			province_id = 2605			# Gibson's Desert
-			province_id = 695			# Königsberg
+			province_id = 695			# Kï¿½nigsberg
 			province_id = 2610
 		}
 		not = { trade_goods = precious_metal }
@@ -291,7 +291,7 @@ province_event = {
 	trigger = {
 		year = 1836
 		or = {
-			province_id = 2084			# Angra Pequeña
+			province_id = 2084			# Angra Pequeï¿½a
 			province_id = 2091			# Mossel Bay
 			province_id = 2092			# Beaufort
 			province_id = 1697			# Figuig
